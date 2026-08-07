@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Smith — Portfolio Cosmic</title>
+    <meta name="description" content="Visual portfolio of Michael Smith, creative developer and designer. Featuring selected works, digital explorations, and traditional motion principles applied to spatial interfaces." />
+    
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: 'hsl(var(--bg))',
+              surface: 'hsl(var(--surface))',
+              'text-primary': 'hsl(var(--text))',
+              muted: 'hsl(var(--muted))',
+              stroke: 'hsl(var(--stroke))',
+              accent: 'hsl(var(--accent))',
+            },
+            fontFamily: {
+              body: ['Inter', 'sans-serif'],
+              display: ['Instrument Serif', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./index.css" />
+
+    <!-- External Animation and Media Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
+  </head>
+  <body class="bg-bg text-text-primary selection:bg-stroke selection:text-text-primary">
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: LOADING SCREEN                  -->
+    <!-- ========================================== -->
+    <div id="loading-screen" class="fixed inset-0 z-[9999] bg-bg flex flex-col justify-between p-8 md:p-16 select-none overflow-hidden transition-all duration-700">
+      <div id="loading-logo" class="text-xs text-muted uppercase tracking-[0.3em] opacity-0 -translate-y-4">
+        Portfolio
+      </div>
+      
+      <div class="flex-1 flex items-center justify-center">
+        <!-- Word Cycler Wrapper -->
+        <div class="relative h-20 flex items-center justify-center overflow-hidden">
+          <div id="loading-word" class="text-4xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tight text-text-primary text-center opacity-0 translate-y-6">
+            Design
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col gap-6">
+        <div class="flex justify-end items-baseline">
+          <span id="loading-counter" class="text-6xl md:text-8xl lg:text-9xl font-sans font-bold text-text-primary tabular-nums tracking-tighter">
+            000
+          </span>
+        </div>
+        <!-- Progress track -->
+        <div class="h-[3px] w-full bg-stroke/50 relative overflow-hidden rounded-full">
+          <div id="loading-progress" class="accent-gradient h-full w-full origin-left transition-transform duration-75 ease-out rounded-full scale-x-0" style="box-shadow: 0 0 8px rgba(137, 170, 204, 0.35);"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- NAVIGATION BAR (FLOATING, LIGHTER GLASS)   -->
+    <!-- ========================================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4">
+      <div id="nav-pill" class="inline-flex items-center rounded-full backdrop-blur-xl border border-white/20 bg-[#1c1c24]/85 px-4 py-2 transition-all-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+        <!-- Links -->
+        <div class="flex items-center gap-1 md:gap-1.5">
+          <a href="#home" data-sec="home" class="nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-text-primary bg-stroke/60">
+            Home
+          </a>
+          <a href="#about" data-sec="about" class="nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-muted hover:text-text-primary hover:bg-stroke/40">
+            About
+          </a>
+          <a href="#work" data-sec="work" class="nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-muted hover:text-text-primary hover:bg-stroke/40">
+            UI Project
+          </a>
+          <a href="#explorations" data-sec="explorations" class="nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-muted hover:text-text-primary hover:bg-stroke/40">
+            Other Design
+          </a>
+        </div>
+
+        <div class="w-px h-5 bg-stroke mx-2"></div>
+
+        <!-- Download Resume Button -->
+        <a href="./resume.pdf" download="Michael_Smith_Resume.pdf" class="relative group text-xs md:text-sm font-medium rounded-full px-3.5 py-1.5 md:py-2 bg-surface/80 text-text-primary border border-white/15 hover:border-white/40 transition-all duration-200 flex items-center gap-1.5 shadow-sm">
+          <span>Resume</span>
+          <svg class="w-3.5 h-3.5 text-accent transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: HERO SECTION                    -->
+    <!-- ========================================== -->
+    <section id="home" class="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden bg-bg text-center select-none">
+      <!-- Background Overlay Vignette & Fluid Canvas -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
+        <div class="absolute inset-0 bg-bg/40 backdrop-brightness-75 z-0"></div>
+        <canvas id="fluid-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-1"></canvas>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent z-2"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 flex flex-col items-center px-4 max-w-4xl mt-12">
+        <p class="blur-in text-xs font-semibold text-muted uppercase tracking-[0.3em] mb-6">
+          COLLECTION '26
+        </p>
+
+        <h1 class="name-reveal text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-sans font-bold tracking-tight text-text-primary mb-6 whitespace-nowrap">
+          Michael Smith
+        </h1>
+
+        <!-- Role cyclying -->
+        <div class="blur-in text-lg md:text-2xl font-light text-muted mb-6 flex flex-wrap justify-center items-center gap-x-2 h-8">
+          <span>A</span>
+          <span id="hero-role" class="font-sans font-semibold text-text-primary inline-block min-w-[70px]">Creative</span>
+          <span>lives in Chicago.</span>
+        </div>
+
+        <p class="blur-in text-xs md:text-sm text-muted max-w-md mb-10 leading-relaxed">
+          Designing seamless digital interactions by focusing on the unique nuances which bring systems to life.
+        </p>
+
+        <div class="cta-fade-in flex flex-wrap items-center justify-center gap-4">
+          <a href="#work" class="relative group rounded-full text-sm font-semibold px-7 py-3.5 bg-text-primary text-bg transition-all duration-300 hover:scale-105 hover:bg-bg hover:text-text-primary border border-transparent overflow-hidden">
+            <span class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[1.5px]" style="background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);">
+              <span class="block w-full h-full rounded-full bg-bg"></span>
+            </span>
+            <span class="relative z-10">See Works</span>
+          </a>
+
+          <a href="./resume.pdf" download="Michael_Smith_Resume.pdf" class="relative group rounded-full text-sm font-semibold px-7 py-3.5 bg-surface/80 text-text-primary transition-all duration-300 hover:scale-105 border border-white/15 overflow-hidden hover:border-white/40 flex items-center gap-2.5">
+            <span class="relative z-10">Download CV</span>
+            <svg class="w-4 h-4 text-accent transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span class="text-[10px] text-muted uppercase tracking-[0.25em]">SCROLL</span>
+        <div class="w-[1px] h-10 bg-stroke/60 relative overflow-hidden rounded-full">
+          <div class="absolute left-0 right-0 h-4 bg-gradient-to-b from-[#89AACC] to-[#4E85BF] animate-scroll-down rounded-full shadow-[0_0_8px_rgba(137,170,204,0.5)]"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 2.5: ABOUT & PROFILE SECTION      -->
+    <!-- ========================================== -->
+    <section id="about" class="relative w-full min-h-screen bg-bg border-t border-stroke select-none py-24 md:py-36 px-6 md:px-16 flex justify-center items-start">
+      <div class="max-w-[1100px] w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+        
+        <!-- Left Column (Pinned via GSAP ScrollTrigger on Desktop) -->
+        <div id="about-left" class="md:col-span-5 flex flex-col gap-6">
+          <p class="about-seq-item text-xs font-semibold text-muted uppercase tracking-[0.3em] mb-1">Profile & Career</p>
+          <h2 class="about-seq-item text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-text-primary tracking-tight leading-none mb-3">Career Journey</h2>
+          <p class="about-seq-item text-sm md:text-base text-muted leading-relaxed max-w-md">
+            I approach design through research, interaction, and visual craft. With a strong grasp of user behavior, information architecture, and hierarchy, I build products that feel clear, intentional, and easy to trust.
+          </p>
+        </div>
+        
+        <!-- Right Column (Timeline - Spacious Scrollable Layout) -->
+        <div id="about-right-col" class="md:col-span-7 flex flex-col gap-20 md:gap-28 pl-0 md:pl-10 relative py-4">
+          
+          <!-- Profile Overview Card (NO DOT, NO LINE ABOVE IT) -->
+          <div id="card-profile-overview" class="about-card relative flex flex-col gap-6 group">
+            <span class="about-seq-item text-xs text-accent font-semibold uppercase tracking-[0.2em] inline-block">Profile Overview</span>
+            <h3 class="about-seq-item text-2xl md:text-3xl font-semibold text-text-primary">Michael Smith</h3>
+            
+            <!-- Details Grid -->
+            <div class="about-seq-item grid grid-cols-1 sm:grid-cols-2 gap-6 mt-1">
+              <div class="flex flex-col">
+                <span class="text-xs text-muted uppercase tracking-wider mb-1">Education</span>
+                <span class="text-sm text-text-primary font-medium">Chicago Institute of Design</span>
+                <span class="text-xs text-muted">BFA in Interaction Design</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs text-muted uppercase tracking-wider mb-1">Details</span>
+                <span class="text-sm text-text-primary font-medium">Age 24 • Based in Chicago</span>
+              </div>
+            </div>
+            
+            <!-- Skills tag row -->
+            <div class="about-seq-item flex flex-col gap-3 mt-1">
+              <span class="text-xs text-muted uppercase tracking-wider">Core Skills</span>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-stroke/30 border border-white/5 text-text-primary px-3 py-1 rounded-full">UI/UX Design</span>
+                <span class="text-xs bg-stroke/30 border border-white/5 text-text-primary px-3 py-1 rounded-full">Interaction Design</span>
+                <span class="text-xs bg-stroke/30 border border-white/5 text-text-primary px-3 py-1 rounded-full">WebGL & Shaders</span>
+                <span class="text-xs bg-stroke/30 border border-white/5 text-text-primary px-3 py-1 rounded-full">GSAP Animation</span>
+                <span class="text-xs bg-stroke/30 border border-white/5 text-text-primary px-3 py-1 rounded-full">Creative Coding</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Work Timeline Container (Lines & Dots START ONLY HERE) -->
+          <div id="work-timeline-container" class="flex flex-col gap-20 md:gap-28 relative pt-4">
+
+            <!-- Career Card 1 (Work 1 - HAS DOT 1) -->
+            <div id="card-work-1" class="about-card relative flex flex-col gap-3 group">
+              <!-- Dot 1 (Square #60CEFF) -->
+              <div class="timeline-dot hidden md:block absolute -left-[44px] top-2 w-2.5 h-2.5 rounded-[2px] bg-[#27272a] border border-white/10 transition-all duration-300"></div>
+              
+              <!-- Track & Line Segment 1 ([#60CEFF_0%,#B656FF_100%]) -->
+              <div class="hidden md:block absolute left-[-39.5px] top-[30px] bottom-[-68px] w-[1.5px] bg-stroke/20 pointer-events-none overflow-hidden">
+                <div id="line-segment-1" class="w-full h-full shadow-[0_0_8px_#60CEFF] origin-top scale-y-0 transition-transform duration-75" style="background: linear-gradient(180deg, #60CEFF 0%, #B656FF 100%);"></div>
+              </div>
+              
+              <div class="about-seq-item flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-xl md:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors duration-300">Lead Product Designer</h3>
+                <span class="text-sm md:text-base font-sans font-medium text-text-primary/90 tracking-wide">2024 - Present</span>
+              </div>
+              
+              <span class="about-seq-item text-xs text-accent font-semibold uppercase tracking-wider inline-block">Independent Practice • Brooklyn, NY</span>
+              <p class="about-seq-item text-sm md:text-base text-muted leading-relaxed mt-2">
+                Running an independent practice — leading UX research, product design, and interface work for select clients across SaaS, e-commerce, and consumer apps. Specialize in clean user journeys and scalable interactive systems.
+              </p>
+            </div>
+      
+            <!-- Career Card 2 (Work 2 - HAS DOT 2) -->
+            <div id="card-work-2" class="about-card relative flex flex-col gap-3 group">
+              <!-- Dot 2 -->
+              <div class="timeline-dot hidden md:block absolute -left-[44px] top-2 w-2.5 h-2.5 rounded-[2px] bg-[#27272a] border border-white/10 transition-all duration-300"></div>
+              
+              <!-- Track & Line Segment 2 ([#60CEFF_0%,#B656FF_100%]) -->
+              <div class="hidden md:block absolute left-[-39.5px] top-[30px] bottom-[-68px] w-[1.5px] bg-stroke/20 pointer-events-none overflow-hidden">
+                <div id="line-segment-2" class="w-full h-full shadow-[0_0_8px_#B656FF] origin-top scale-y-0 transition-transform duration-75" style="background: linear-gradient(180deg, #60CEFF 0%, #B656FF 100%);"></div>
+              </div>
+
+              <div class="about-seq-item flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-xl md:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors duration-300">Product Designer</h3>
+                <span class="text-sm md:text-base font-sans font-medium text-text-primary/90 tracking-wide">2022 - 2024</span>
+              </div>
+              
+              <span class="about-seq-item text-xs text-accent font-semibold uppercase tracking-wider inline-block">Signal Studio</span>
+              <p class="about-seq-item text-sm md:text-base text-muted leading-relaxed mt-2">
+                Owned end-to-end product design for digital experiences in fashion, beauty, and hospitality — from user flows and wireframes to high-fidelity UI and developer handoff.
+              </p>
+            </div>
+      
+            <!-- Career Card 3 (Work 3 - HAS DOT 3) -->
+            <div id="card-work-3" class="about-card relative flex flex-col gap-3 group">
+              <!-- Dot 3 -->
+              <div class="timeline-dot hidden md:block absolute -left-[44px] top-2 w-2.5 h-2.5 rounded-[2px] bg-[#27272a] border border-white/10 transition-all duration-300"></div>
+              
+              <div class="about-seq-item flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 class="text-xl md:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors duration-300">UI/UX Designer</h3>
+                <span class="text-sm md:text-base font-sans font-medium text-text-primary/90 tracking-wide">2020 - 2022</span>
+              </div>
+              
+              <span class="about-seq-item text-xs text-accent font-semibold uppercase tracking-wider inline-block">Convey Digital</span>
+              <p class="about-seq-item text-sm md:text-base text-muted leading-relaxed mt-2">
+                Built design systems, marketing sites, and product interfaces for early-stage startups and DTC brands, with a focus on conversion paths and modular libraries.
+              </p>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: UI PROJECT SECTION (REFINED)    -->
+    <!-- ========================================== -->
+    <section id="work" class="bg-bg py-24 md:py-36 select-none relative border-t border-stroke/40">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+        
+        <!-- Header: UI Project -->
+        <div id="ui-projects-header" class="flex flex-col items-center text-center mb-16 md:mb-24">
+          <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold font-sans tracking-tight text-text-primary mb-3">
+            UI Project
+          </h2>
+          <p class="text-sm md:text-base text-muted max-w-md leading-relaxed">
+            以用户体验与极简美学为核心的界面交互设计案例
+          </p>
+        </div>
+
+        <!-- Staggered 2-Column Grid (Organic Tilted Sketch Layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+          
+          <!-- Left Column (Project 1 & Project 3) -->
+          <div class="flex flex-col gap-14 md:gap-20">
+            
+            <!-- Project 1 -->
+            <div id="project-card-1" class="group flex flex-col gap-5 cursor-pointer">
+              <!-- Cover Image Box (Aspect Ratio 3:4, Organic Rest Angle -rotate-3, Straightens to rotate-0 on Hover) -->
+              <div class="w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-surface relative border border-white/10 shadow-2xl transition-all duration-500 -rotate-3 md:-rotate-4 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-[0_25px_60px_rgba(59,106,246,0.25)]">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000" alt="UI Project 1" class="w-full h-full object-cover select-none" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+              
+              <!-- Separated Bottom Info (Outside Cover Box) -->
+              <div class="flex items-start justify-between gap-4 px-2">
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
+                    Spatial OS & AI Workspace UI
+                  </h3>
+                  <p class="text-xs md:text-sm text-muted">
+                    下一代空间计算与 AI 协同工作站界面
+                  </p>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
+                  <span class="text-text-primary group-hover:text-bg text-base font-semibold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div id="project-card-3" class="group flex flex-col gap-5 cursor-pointer">
+              <!-- Cover Image Box (Aspect Ratio 3:4, Organic Rest Angle rotate-3, Straightens to rotate-0 on Hover) -->
+              <div class="w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-surface relative border border-white/10 shadow-2xl transition-all duration-500 rotate-2 md:rotate-3 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-[0_25px_60px_rgba(59,106,246,0.25)]">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" alt="UI Project 3" class="w-full h-full object-cover select-none" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+              
+              <!-- Separated Bottom Info -->
+              <div class="flex items-start justify-between gap-4 px-2">
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
+                    Cybernetic Audio DAW Platform
+                  </h3>
+                  <p class="text-xs md:text-sm text-muted">
+                    高阶沉浸式数字音频工作站系统设计
+                  </p>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
+                  <span class="text-text-primary group-hover:text-bg text-base font-semibold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column (Project 2 & Project 4 - Offset Downward) -->
+          <div class="flex flex-col gap-14 md:gap-20 md:mt-24">
+            
+            <!-- Project 2 -->
+            <div id="project-card-2" class="group flex flex-col gap-5 cursor-pointer">
+              <!-- Cover Image Box (Aspect Ratio 3:4, Organic Rest Angle rotate-4, Straightens to rotate-0 on Hover) -->
+              <div class="w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-surface relative border border-white/10 shadow-2xl transition-all duration-500 rotate-3 md:rotate-4 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-[0_25px_60px_rgba(59,106,246,0.25)]">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000" alt="UI Project 2" class="w-full h-full object-cover select-none" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+              
+              <!-- Separated Bottom Info -->
+              <div class="flex items-start justify-between gap-4 px-2">
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
+                    FinTech Neo-Banking Dashboard
+                  </h3>
+                  <p class="text-xs md:text-sm text-muted">
+                    暗黑极简数字资产管理与金融仪表盘
+                  </p>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
+                  <span class="text-text-primary group-hover:text-bg text-base font-semibold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div id="project-card-4" class="group flex flex-col gap-5 cursor-pointer">
+              <!-- Cover Image Box (Aspect Ratio 3:4, Organic Rest Angle -rotate-4, Straightens to rotate-0 on Hover) -->
+              <div class="w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-surface relative border border-white/10 shadow-2xl transition-all duration-500 -rotate-3 md:-rotate-4 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-[0_25px_60px_rgba(59,106,246,0.25)]">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1000" alt="UI Project 4" class="w-full h-full object-cover select-none" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+              
+              <!-- Separated Bottom Info -->
+              <div class="flex items-start justify-between gap-4 px-2">
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
+                    Autonomous Mobility App Interface
+                  </h3>
+                  <p class="text-xs md:text-sm text-muted">
+                    未来智能出行与自动驾驶座舱交互系统
+                  </p>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
+                  <span class="text-text-primary group-hover:text-bg text-base font-semibold transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: OTHER DESIGN (HORIZONTAL PINNED)-->
+    <!-- ========================================== -->
+    <section id="explorations" class="relative w-full bg-bg overflow-hidden select-none border-t border-stroke/40">
+      <div id="other-design-pinned" class="h-screen w-full flex flex-col justify-center relative overflow-hidden py-12">
+        
+        <!-- Header (Centered Title and Subtitle) -->
+        <div class="max-w-[1200px] w-full mx-auto px-6 md:px-10 lg:px-16 mb-12 md:mb-16 flex flex-col items-center text-center gap-2 shrink-0">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-text-primary">
+            Other Design
+          </h2>
+          <p class="text-xs md:text-sm text-muted max-w-lg leading-relaxed mt-1">
+            探索视觉概念、品牌实验、CGI 渲染与多维图形设计的创意沙盒
+          </p>
+        </div>
+
+        <!-- Horizontal Scroll Track (High-Contrast Standout Cards) -->
+        <div class="w-full overflow-hidden flex items-center">
+          <div id="other-design-track" class="flex flex-nowrap gap-6 md:gap-8 px-6 md:px-10 lg:px-16 items-center shrink-0">
+            
+            <!-- Horizontal Card 1 (Distinct Dark Glass Surface - Video Card) -->
+            <div id="other-design-video-card" class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
+              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
+                <img src="./aigc-cover.png" alt="奕境x9世界杯AIGC创意视频" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
+                <div class="flex flex-col gap-0.5">
+                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">奕境x9世界杯AIGC创意视频</h3>
+                  <p class="text-xs text-muted">AIGC 创意视频 • 3D混合动漫</p>
+                </div>
+                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+              </div>
+            </div>
+
+            <!-- Horizontal Card 2 -->
+            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
+              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000" alt="Atelier Bloom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
+                <div class="flex flex-col gap-0.5">
+                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Atelier Bloom</h3>
+                  <p class="text-xs text-muted">E-commerce • Beauty & wellness</p>
+                </div>
+                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+              </div>
+            </div>
+
+            <!-- Horizontal Card 3 -->
+            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
+              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
+                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1000" alt="Harbor Booking" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
+                <div class="flex flex-col gap-0.5">
+                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Harbor Booking System</h3>
+                  <p class="text-xs text-muted">Booking • Mobility & Travel</p>
+                </div>
+                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+              </div>
+            </div>
+
+            <!-- Horizontal Card 4 -->
+            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
+              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000" alt="Cybernetic Audio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
+                <div class="flex flex-col gap-0.5">
+                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Cybernetic Spatial Audio</h3>
+                  <p class="text-xs text-muted">Audio Interface • VisionOS</p>
+                </div>
+                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+              </div>
+            </div>
+
+            <!-- Horizontal Card 5 -->
+            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
+              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
+                <img src="https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1000" alt="Neon Synth" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
+                <div class="flex flex-col gap-0.5">
+                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Neon Synth Brand</h3>
+                  <p class="text-xs text-muted">Brand Design • CGI Art</p>
+                </div>
+                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: STATS SECTION                   -->
+    <!-- ========================================== -->
+    <section class="bg-bg py-16 md:py-24 border-t border-stroke select-none">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          
+          <div class="flex flex-col items-center md:items-start text-center md:text-left gap-2 stat-item opacity-0 translate-y-8">
+            <span class="text-6xl md:text-7xl lg:text-8xl font-sans font-bold tracking-tight text-text-primary">20+</span>
+            <div class="w-12 h-[2px] bg-stroke/60 md:w-16"></div>
+            <span class="text-xs uppercase tracking-[0.25em] text-muted font-semibold mt-1">Years Experience</span>
+          </div>
+
+          <div class="flex flex-col items-center md:items-start text-center md:text-left gap-2 stat-item opacity-0 translate-y-8">
+            <span class="text-6xl md:text-7xl lg:text-8xl font-sans font-bold tracking-tight text-text-primary">95+</span>
+            <div class="w-12 h-[2px] bg-stroke/60 md:w-16"></div>
+            <span class="text-xs uppercase tracking-[0.25em] text-muted font-semibold mt-1">Projects Done</span>
+          </div>
+
+          <div class="flex flex-col items-center md:items-start text-center md:text-left gap-2 stat-item opacity-0 translate-y-8">
+            <span class="text-6xl md:text-7xl lg:text-8xl font-sans font-bold tracking-tight text-text-primary">200%</span>
+            <div class="w-12 h-[2px] bg-stroke/60 md:w-16"></div>
+            <span class="text-xs uppercase tracking-[0.25em] text-muted font-semibold mt-1">Satisfied Clients</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================== -->
+    <!-- SECTION 7: FOOTER & CONTACT (FIG 2 MATCH)  -->
+    <!-- ========================================== -->
+    <footer id="contact" class="relative w-full py-24 md:py-36 overflow-hidden bg-bg select-none border-t border-stroke/40">
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column (With contact-anim-item class matching stat-item pattern) -->
+          <div id="contact-left" class="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-8 contact-anim-item opacity-0 translate-y-8">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold font-sans tracking-tight text-text-primary mb-6 leading-[1.05]">
+              Let's Work<br/>Together
+            </h2>
+
+            <p class="text-sm md:text-base text-muted max-w-md mb-10 leading-relaxed">
+              无论是项目合作、设计咨询或交流探讨，随时欢迎与我联系。
+            </p>
+
+            <a href="./resume.pdf" download="Michael_Smith_Resume.pdf" class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-bold text-sm transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-[0_0_35px_rgba(255,255,255,0.45)] overflow-hidden">
+              <span class="relative z-10">下载简历</span>
+              <svg class="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Center Vertical Divider (Desktop Only) -->
+          <div class="hidden lg:flex lg:col-span-1 justify-center items-center h-full relative">
+            <div class="w-px h-64 bg-stroke/40 relative flex items-center justify-center">
+              <div class="w-6 h-6 rounded-full bg-bg border border-stroke flex items-center justify-center shadow-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (Stacked Cards with contact-anim-item class for stagger entrance animation) -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            
+            <!-- Card 1: Name -->
+            <div class="contact-card contact-anim-item opacity-0 translate-y-8 flex items-center gap-4 p-5 rounded-[22px] bg-surface/40 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-white/20">
+              <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-0.5">
+                <span class="text-[11px] text-muted font-medium">姓名</span>
+                <span class="text-sm font-bold font-sans text-text-primary">Michael Smith</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Phone (with 微信同号 note) -->
+            <div class="contact-card contact-anim-item opacity-0 translate-y-8 flex items-center justify-between gap-4 p-5 rounded-[22px] bg-surface/40 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-white/20 cursor-pointer group" onclick="copyToClipboard('+86 138 0000 0000', this)">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.496-5.228-3.828-6.724-6.724l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[11px] text-muted font-medium">电话</span>
+                  <span class="text-sm font-bold font-sans text-text-primary">+86 138 0000 0000 <span class="text-xs font-normal text-muted ml-1">（微信同号）</span></span>
+                </div>
+              </div>
+              <button class="p-2 rounded-lg bg-surface/60 border border-white/10 text-muted group-hover:text-white group-hover:border-white/30 transition-all shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25c0-.621.504-1.125 1.125-1.125h7.5c.621 0 1.125.504 1.125 1.125v9.25c0 .621-.504 1.125-1.125 1.125z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Card 3: Email -->
+            <div class="contact-card contact-anim-item opacity-0 translate-y-8 flex items-center justify-between gap-4 p-5 rounded-[22px] bg-surface/40 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-white/20 cursor-pointer group" onclick="copyToClipboard('hello@michaelsmith.com', this)">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-[11px] text-muted font-medium">邮箱</span>
+                  <span class="text-sm font-bold font-sans text-text-primary break-all">hello@michaelsmith.com</span>
+                </div>
+              </div>
+              <button class="p-2 rounded-lg bg-surface/60 border border-white/10 text-muted group-hover:text-white group-hover:border-white/30 transition-all shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25c0-.621.504-1.125 1.125-1.125h7.5c.621 0 1.125.504 1.125 1.125v9.25c0 .621-.504 1.125-1.125 1.125z"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Card 4: WeChat QR Code & WeChat ID Integrated -->
+            <div class="contact-card contact-anim-item opacity-0 translate-y-8 flex items-center justify-between gap-4 p-5 rounded-[22px] bg-surface/40 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-white/20 group cursor-pointer" onclick="copyToClipboard('Design_Michael', this)">
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-xl bg-white p-1.5 border border-white/20 shrink-0 overflow-hidden shadow-md">
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://u.wechat.com/design_michael" alt="WeChat QR Code" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-bold font-sans text-text-primary">微信二维码</span>
+                    <span class="text-xs text-accent font-semibold">(Design_Michael)</span>
+                  </div>
+                  <span class="text-xs text-muted">扫描二维码或点击复制微信号</span>
+                </div>
+              </div>
+              <button class="p-2 rounded-lg bg-surface/60 border border-white/10 text-muted group-hover:text-white group-hover:border-white/30 transition-all shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25c0-.621.504-1.125 1.125-1.125h7.5c.621 0 1.125.504 1.125 1.125v9.25c0 .621-.504 1.125-1.125 1.125z"></path>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="w-full border-t border-stroke/40 mt-16 pt-8 flex items-center justify-between gap-4 text-xs text-muted">
+          <span>© 2026 Michael Smith. All rights reserved.</span>
+          <span>Designed with Precision & Intent</span>
+        </div>
+
+      </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- LIGHTBOX MODAL CONTAINER                   -->
+    <!-- ========================================== -->
+    <div id="lightbox" class="fixed inset-0 z-[10000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 cursor-zoom-out hidden transition-opacity duration-300 opacity-0">
+      <div class="relative max-w-4xl max-h-[85vh] rounded-xl overflow-hidden border border-white/10" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" alt="Exploration Detail" class="w-full h-full object-contain max-h-[85vh] select-none" />
+        <button id="lightbox-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 border border-white/15 flex items-center justify-center text-text-primary text-lg cursor-pointer">✕</button>
+      </div>
+    </div>
+
+
+    <!-- FIXED CLOSE BUTTON (MUST BE OUTSIDE SCROLL CONTAINER & BLUR PARENT FOR TRUE VIEWPORT PINNING) -->
+    <button id="modal-close-btn" onclick="closeProjectModal()" class="fixed top-6 right-6 md:top-8 md:right-8 z-[100005] w-12 h-12 rounded-full bg-[#1c1c24] border border-white/30 text-white flex items-center justify-center text-xl hover:scale-110 hover:bg-white hover:text-black transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.8)] cursor-pointer hidden">
+      ✕
+    </button>
+
+    <!-- FULL-PAGE SCROLLABLE PROJECT DETAIL MODAL CONTAINER -->
+    <div id="project-modal" class="fixed inset-0 z-[100000] bg-black/60 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 overflow-y-auto select-text">
+      <!-- Scrollable Container -->
+      <div id="modal-scroll-container" class="min-h-screen w-full max-w-[1000px] mx-auto px-6 py-20 md:py-28 flex flex-col gap-12 text-text-primary" onclick="event.stopPropagation()">
+        
+        <!-- Modal Hero Image & Header -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <span id="modal-tag" class="px-3.5 py-1 rounded-full bg-[#60CEFF]/10 border border-[#60CEFF]/30 text-xs font-semibold text-[#60CEFF] tracking-wider">
+              UI/UX DESIGN CASE
+            </span>
+            <span id="modal-year" class="text-xs text-muted font-medium">2026</span>
+          </div>
+
+          <h1 id="modal-title" class="text-4xl md:text-6xl font-bold font-sans tracking-tight text-white leading-tight">
+            Spatial OS & AI Workspace UI
+          </h1>
+
+          <p id="modal-subtitle" class="text-base md:text-xl text-muted leading-relaxed">
+            下一代空间计算与 AI 协同工作站界面设计探索
+          </p>
+        </div>
+
+        <!-- Hero Cover / Video Container -->
+        <div class="w-full aspect-[16/9] rounded-[28px] md:rounded-[36px] overflow-hidden border border-white/15 shadow-2xl relative bg-surface">
+          <img id="modal-cover-img" src="" alt="Project Cover" class="w-full h-full object-cover" />
+          <video id="modal-cover-video" src="" controls class="w-full h-full object-cover hidden" preload="metadata"></video>
+        </div>
+
+        <!-- Project Metadata Grid -->
+        <div id="modal-meta-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-[28px] bg-[#1a1a20]/90 border border-white/15 backdrop-blur-md">
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-muted font-medium uppercase tracking-wider">Role</span>
+            <span id="modal-meta-role" class="text-sm font-bold text-white">Lead UI/UX Designer</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-muted font-medium uppercase tracking-wider">Client</span>
+            <span id="modal-meta-client" class="text-sm font-bold text-white">Spatial Vision Inc.</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-muted font-medium uppercase tracking-wider">Deliverables</span>
+            <span id="modal-meta-deliverables" class="text-sm font-bold text-white">Design System & App</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-xs text-muted font-medium uppercase tracking-wider">Timeline</span>
+            <span id="modal-meta-timeline" class="text-sm font-bold text-white">3 Months</span>
+          </div>
+        </div>
+
+        <!-- Deep-Dive Content Sections -->
+        <div id="modal-overview-section" class="flex flex-col gap-6 text-sm md:text-base leading-relaxed text-muted border-t border-stroke/50 pt-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-sans">01. Design Context & Strategy</h2>
+          <p id="modal-overview-text">
+            在现代空间计算与 AI 交互时代，传统二维界面的信息承载效率正面临瓶颈。本项目旨在重新构想人机协作机制，融合 3D 浮动面板、智能上下文菜单与声控手势混合控制，为专业创造者提供无缝的工作流。
+          </p>
+        </div>
+
+        <!-- Video Description Section (Only for Video Projects) -->
+        <div id="modal-video-desc-section" class="hidden flex flex-col gap-4 text-sm md:text-base leading-relaxed text-muted border-t border-stroke/50 pt-8">
+          <p id="modal-video-desc-text" class="text-base md:text-lg text-white leading-relaxed font-medium">
+            视频通过 3D混合动漫风格的 AIGC 画面，生动演绎了画中角色逃跑并加入阿根廷夺冠合影的趣味故事，硬核且幽默地凸显了奕境X9搭载的激光雷达与百万像素智慧投影大灯的超强感知力。
+          </p>
+        </div>
+
+        <!-- Showcase Section: Full-Width White Long Image Placeholder (Screenshot 4 Red Box) -->
+        <div id="modal-showcase-section" class="flex flex-col gap-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-sans">02. Interface Showcase</h2>
+          
+          <!-- Full-Width White Long Placeholder Card -->
+          <div class="w-full h-[1200px] md:h-[1800px] rounded-[28px] bg-white border border-white/20 shadow-2xl flex flex-col items-center justify-center p-8 text-black/50 font-mono text-sm md:text-base uppercase tracking-widest text-center">
+            <svg class="w-16 h-16 mb-4 text-black/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+            </svg>
+            <span>LONG UI INTERFACE CASE STUDY IMAGE PLACEHOLDER</span>
+            <span class="text-xs text-black/40 mt-2">（整页高精 UI 设计细节长图占位）</span>
+          </div>
+        </div>
+
+        <!-- Footer Back/Close Button -->
+        <div class="flex justify-center pt-8 border-t border-stroke/50">
+          <button onclick="closeProjectModal()" class="px-8 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-white/90 transition-all duration-300 shadow-xl hover:scale-105">
+            关闭详情页面
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- VANILLA JAVASCRIPT ANIMATIONS & MEDIA LOGIC-->
+    <!-- ========================================== -->
+    <script>
+      // Register GSAP ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Configure HLS Background Videos
+      const HLS_URL = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+      
+      function setupHlsVideo(videoElement) {
+        if (!videoElement) return;
+        if (Hls.isSupported()) {
+          const hls = new Hls({ maxMaxBufferLength: 10, enableWorker: true });
+          hls.loadSource(HLS_URL);
+          hls.attachMedia(videoElement);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            videoElement.play().catch(e => console.log("HLS autoplay blocked by browser", e));
+          });
+        } else if (videoElement.canPlayType("application/vnd.apple.mpegurl")) {
+          videoElement.src = HLS_URL;
+          videoElement.addEventListener("loadedmetadata", () => {
+            videoElement.play().catch(e => console.log("Native autoplay blocked", e));
+          });
+        }
+      }
+
+      setupHlsVideo(document.getElementById("footer-video"));
+
+      // 2. Loading Screen Logic
+      const WORDS = ["Design", "Create", "Inspire"];
+      const loadingScreen = document.getElementById("loading-screen");
+      const loadingLogo = document.getElementById("loading-logo");
+      const loadingWord = document.getElementById("loading-word");
+      const loadingCounter = document.getElementById("loading-counter");
+      const loadingProgress = document.getElementById("loading-progress");
+      
+      // Initialize GSAP states
+      gsap.set(".name-reveal", { opacity: 0, y: 50 });
+      gsap.set(".blur-in", { opacity: 0, y: 35, filter: "blur(12px)" });
+      gsap.set(".cta-fade-in", { opacity: 0, y: 20 });
+      
+      let wordIndex = 0;
+      let count = 0;
+      const duration = 2700;
+      let startTime = null;
+
+      // Animate Loading Logo Fade-In
+      setTimeout(() => {
+        loadingLogo.style.opacity = "1";
+        loadingLogo.style.transform = "translateY(0)";
+        loadingWord.style.opacity = "0.85";
+        loadingWord.style.transform = "translateY(0)";
+      }, 100);
+
+      // Cycle center words every 900ms
+      const wordInterval = setInterval(() => {
+        // Fade out current word
+        loadingWord.style.animation = "word-fade-out 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards";
+        
+        setTimeout(() => {
+          wordIndex = (wordIndex + 1) % WORDS.length;
+          loadingWord.innerText = WORDS[wordIndex];
+          // Fade in new word
+          loadingWord.style.animation = "word-fade-in 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) forwards";
+        }, 450);
+      }, 900);
+
+      // requestAnimationFrame counter
+      function updateCounter(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        count = Math.floor(progress * 100);
+        loadingCounter.innerText = String(count).padStart(3, "0");
+        loadingProgress.style.transform = `scaleX(${count / 100})`;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          // Finish Loading: Reset scroll to 0 (Hero First Screen)
+          window.scrollTo(0, 0);
+          clearInterval(wordInterval);
+          setTimeout(() => {
+            // Fade out screen
+            loadingScreen.style.opacity = "0";
+            loadingScreen.style.pointerEvents = "none";
+            
+            setTimeout(() => {
+              loadingScreen.style.display = "none";
+              window.scrollTo(0, 0);
+              // Trigger GSAP entrance animations once loader is gone
+              triggerHeroEntrance();
+            }, 700);
+          }, 400);
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+
+      // 3. Hero Entrance Animations (GSAP)
+      function triggerHeroEntrance() {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        tl.to(".name-reveal", {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          delay: 0.1
+        })
+        .to(".blur-in", {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 1.0,
+          stagger: 0.1
+        }, "-=0.9")
+        .to(".cta-fade-in", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15
+        }, "-=0.7");
+
+        // Init scroll triggers for sections after loader completes
+        setupScrollAnimations();
+      }
+
+      // 4. Hero Role Cycler
+      const HERO_ROLES = ["Creative", "Fullstack", "Founder", "Scholar"];
+      const heroRole = document.getElementById("hero-role");
+      let roleIndex = 0;
+
+      setInterval(() => {
+        if (loadingScreen.style.display === "none") {
+          roleIndex = (roleIndex + 1) % HERO_ROLES.length;
+          heroRole.style.animation = "word-fade-out 0.3s ease-in forwards";
+          
+          setTimeout(() => {
+            heroRole.innerText = HERO_ROLES[roleIndex];
+            heroRole.style.animation = "word-fade-in 0.3s ease-out forwards";
+          }, 300);
+        }
+      }, 2000);
+
+      // 5. Scroll Animations (GSAP ScrollTrigger)
+      function setupScrollAnimations() {
+        // GSAP ScrollTrigger: Pin Left Column while Right Column scrolls
+        if (window.innerWidth >= 768) {
+          ScrollTrigger.create({
+            trigger: "#about-right-col",
+            pin: "#about-left",
+            start: "top 128px",
+            end: "bottom 80%",
+            pinSpacing: false
+          });
+        }
+
+        // About Left Column Reveal (entrance on scroll)
+        gsap.from("#about-left .about-seq-item", {
+          scrollTrigger: {
+            trigger: "#about",
+            start: "top 75%",
+            once: true
+          },
+          y: 70,
+          opacity: 0,
+          duration: 0.9,
+          stagger: 0.18,
+          ease: "power3.out"
+        });
+
+        // Profile Overview Card Reveal (NO DOT, NO LINE)
+        gsap.from("#card-profile-overview .about-seq-item", {
+          scrollTrigger: {
+            trigger: "#card-profile-overview",
+            start: "top 80%",
+            once: true
+          },
+          y: 70,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.15,
+          ease: "power3.out"
+        });
+
+        // Work Experience Cards 1, 2, 3 Reveal
+        ["#card-work-1", "#card-work-2", "#card-work-3"].forEach((cardId) => {
+          const cardEl = document.querySelector(cardId);
+          if (cardEl) {
+            const items = cardEl.querySelectorAll('.about-seq-item');
+            gsap.from(items, {
+              scrollTrigger: {
+                trigger: cardEl,
+                start: "top 82%",
+                once: true
+              },
+              y: 70,
+              opacity: 0,
+              duration: 0.85,
+              stagger: 0.15,
+              ease: "power3.out"
+            });
+          }
+        });
+
+        // Line Segment 1 (between Work 1 dot & Work 2 dot)
+        gsap.to("#line-segment-1", {
+          scaleY: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: "#card-work-1",
+            start: "top 50%",
+            endTrigger: "#card-work-2",
+            end: "top 50%",
+            scrub: 0.3
+          }
+        });
+
+        // Line Segment 2 (between Work 2 dot & Work 3 dot)
+        gsap.to("#line-segment-2", {
+          scaleY: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: "#card-work-2",
+            start: "top 50%",
+            endTrigger: "#card-work-3",
+            end: "top 50%",
+            scrub: 0.3
+          }
+        });
+
+        // Dots Activation (ONLY for Work Experience cards 1, 2, 3 - Square #60CEFF)
+        [1, 2, 3].forEach((idx) => {
+          const card = document.querySelector(`#card-work-${idx}`);
+          if (!card) return;
+          const dot = card.querySelector('.timeline-dot');
+          if (dot) {
+            ScrollTrigger.create({
+              trigger: card,
+              start: "top 55%",
+              end: "bottom 45%",
+              onEnter: () => {
+                dot.classList.remove('bg-[#27272a]');
+                dot.classList.add('bg-[#60CEFF]', 'scale-125', 'shadow-[0_0_10px_#60CEFF]', 'border-[#60CEFF]');
+              },
+              onLeave: () => {
+                dot.classList.add('bg-[#27272a]');
+                dot.classList.remove('bg-[#60CEFF]', 'scale-125', 'shadow-[0_0_10px_#60CEFF]', 'border-[#60CEFF]');
+              },
+              onEnterBack: () => {
+                dot.classList.remove('bg-[#27272a]');
+                dot.classList.add('bg-[#60CEFF]', 'scale-125', 'shadow-[0_0_10px_#60CEFF]', 'border-[#60CEFF]');
+              },
+              onLeaveBack: () => {
+                dot.classList.add('bg-[#27272a]');
+                dot.classList.remove('bg-[#60CEFF]', 'scale-125', 'shadow-[0_0_10px_#60CEFF]', 'border-[#60CEFF]');
+              }
+            });
+          }
+        });
+
+        // UI Project Entrance Animations (repeatable animation on scroll)
+        gsap.from("#ui-projects-header", {
+          scrollTrigger: {
+            trigger: "#ui-projects-header",
+            start: "top 88%",
+            toggleActions: "play reverse play reverse"
+          },
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out"
+        });
+
+        ["#project-card-1", "#project-card-2", "#project-card-3", "#project-card-4"].forEach((cardId) => {
+          gsap.from(cardId, {
+            scrollTrigger: {
+              trigger: cardId,
+              start: "top 88%",
+              toggleActions: "play reverse play reverse"
+            },
+            y: 80,
+            opacity: 0,
+            duration: 0.85,
+            ease: "power3.out"
+          });
+        });
+
+        // UI Project Parallax Scrub Movement (cards move smoothly as you scroll)
+        gsap.fromTo("#work .grid > div:first-child", 
+          { y: 60 },
+          {
+            scrollTrigger: {
+              trigger: "#work",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1
+            },
+            y: -50,
+            ease: "none"
+          }
+        );
+
+        gsap.fromTo("#work .grid > div:last-child", 
+          { y: 120 },
+          {
+            scrollTrigger: {
+              trigger: "#work",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1
+            },
+            y: -80,
+            ease: "none"
+          }
+        );
+
+        // Other Design Title Entrance Animation
+        gsap.from("#other-design-pinned .max-w-\\[1200px\\] > *", {
+          scrollTrigger: {
+            trigger: "#explorations",
+            start: "top 80%",
+            toggleActions: "play reverse play reverse"
+          },
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out"
+        });
+
+        // Other Design Horizontal Scroll Pinning
+        const track = document.getElementById("other-design-track");
+        if (track) {
+          const getScrollAmount = () => -(track.scrollWidth - window.innerWidth + 80);
+          gsap.to(track, {
+            x: getScrollAmount,
+            ease: "none",
+            scrollTrigger: {
+              trigger: "#explorations",
+              pin: true,
+              scrub: 1,
+              start: "top top",
+              end: () => "+=" + (track.scrollWidth - window.innerWidth + 300),
+              invalidateOnRefresh: true
+            }
+          });
+        }
+
+        // Contact items fade in stagger (identical pattern to .stat-item)
+        gsap.to(".contact-anim-item", {
+          scrollTrigger: {
+            trigger: "#contact",
+            start: "top 85%",
+            toggleActions: "play reverse play reverse"
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out"
+        });
+
+        // Stats items fade in stagger (repeatable animation)
+        gsap.to(".stat-item", {
+          scrollTrigger: {
+            trigger: ".stat-item",
+            start: "top 85%",
+            toggleActions: "play reverse play reverse"
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out"
+        });
+      }
+
+      // Click-to-Scroll Arrow Control for Section 4 (Other Design)
+      function scrollOtherDesignTrack(direction) {
+        window.scrollBy({
+          top: direction * 450,
+          behavior: "smooth"
+        });
+      }
+
+      // 6. Project Detail Modal Opening & Data Binding
+      const projectModal = document.getElementById("project-modal");
+      
+      const projectDetailsData = {
+        "other-design-video-card": {
+          title: "奕境x9世界杯AIGC创意视频",
+          subtitle: "",
+          tag: "AIGC VIDEO",
+          year: "2026",
+          cover: "./aigc-cover.png",
+          videoSrc: "./视频1.mp4",
+          videoDesc: "视频通过 3D混合动漫风格的 AIGC 画面，生动演绎了画中角色逃跑并加入阿根廷夺冠合影的趣味故事，硬核且幽默地凸显了奕境X9搭载的激光雷达与百万像素智慧投影大灯的超强感知力。"
+        },
+        "project-card-1": {
+          title: "Spatial OS & AI Workspace UI",
+          subtitle: "下一代空间计算与 AI 协同工作站界面设计探索",
+          tag: "SPATIAL COMPUTING & AI",
+          year: "2026",
+          cover: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          role: "Lead UI/UX Designer",
+          client: "Spatial Vision Inc.",
+          deliverables: "VisionOS Design System",
+          timeline: "3 Months",
+          overview: "在空间计算时代，人与三维数字资产的交互模式正在发生革命性跃迁。本设计为三维空间窗口、AI 上下文语义识别与多模态手势控制提供了极简的直觉式操作界面。"
+        },
+        "project-card-2": {
+          title: "FinTech Neo-Banking Dashboard",
+          subtitle: "暗黑极简数字资产管理与高频交易金融仪表盘",
+          tag: "FINTECH & SAAS",
+          year: "2025",
+          cover: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
+          role: "Product Designer",
+          client: "Aether Capital",
+          deliverables: "Web & Mobile Dashboard",
+          timeline: "4 Months",
+          overview: "专注于高密数据的高效可视化呈现。通过极小化视觉噪点与自定义组件微调，为量化交易者与资产管理者提供毫秒级的流畅交互与精准风险控制掌控。"
+        },
+        "project-card-3": {
+          title: "Cybernetic Audio DAW Platform",
+          subtitle: "高阶沉浸式数字音频工作站系统与音乐制作界面",
+          tag: "CREATIVE TOOLS",
+          year: "2025",
+          cover: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1200",
+          role: "UI & Sound Designer",
+          client: "SynthWave Labs",
+          deliverables: "Desktop DAW Suite",
+          timeline: "5 Months",
+          overview: "针对专业音乐制作人打破传统繁琐的下拉菜单限制。采用节点式音轨混音器与硬件感满满的拟物数字旋钮，打造灵感不中断的创作环境。"
+        },
+        "project-card-4": {
+          title: "Autonomous Mobility App Interface",
+          subtitle: "未来智能出行与自动驾驶座舱多屏交互系统",
+          tag: "AUTOMOTIVE UI",
+          year: "2024",
+          cover: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+          role: "Senior Interaction Designer",
+          client: "HyperDrive AI",
+          deliverables: "Cockpit HMI & App",
+          timeline: "6 Months",
+          overview: "结合 LiDAR 实时环境重构与增强现实 HUD 显示，将道路感知、乘客娱乐与安全驾驶辅助无缝融为一体的智慧驾舱 UI 体系。"
+        }
+      };
+
+      // Open Modal Function
+      function openProjectModal(cardId) {
+        const data = projectDetailsData[cardId] || {
+          title: "Creative Project Case",
+          subtitle: "视觉概念、品牌实验与多维图形设计案例探索",
+          tag: "DESIGN EXPLORATION",
+          year: "2026",
+          cover: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
+          role: "Creative Director",
+          client: "Personal Project",
+          deliverables: "Visual System & 3D",
+          timeline: "2 Weeks",
+          overview: "探索品牌图形系统在三维渲染与数字介质上的动态演变逻辑，展现多维空间中的艺术表达与细节研磨。"
+        };
+
+        document.getElementById("modal-title").innerText = data.title;
+        document.getElementById("modal-subtitle").innerText = data.subtitle;
+        document.getElementById("modal-tag").innerText = data.tag;
+        document.getElementById("modal-year").innerText = data.year;
+
+        const imgEl = document.getElementById("modal-cover-img");
+        const videoEl = document.getElementById("modal-cover-video");
+        const metaGrid = document.getElementById("modal-meta-grid");
+        const overviewSec = document.getElementById("modal-overview-section");
+        const videoDescSec = document.getElementById("modal-video-desc-section");
+        const showcaseSec = document.getElementById("modal-showcase-section");
+        const scrollContainer = document.getElementById("modal-scroll-container");
+
+        if (data.videoSrc) {
+          // Video Mode - enlarge player and strip away red-boxed items from Screenshot 2
+          if (imgEl) imgEl.classList.add("hidden");
+          if (videoEl) {
+            videoEl.classList.remove("hidden");
+            videoEl.src = data.videoSrc;
+            videoEl.load();
+            videoEl.play().catch(e => console.log("Video auto play prevented", e));
+          }
+          if (metaGrid) metaGrid.classList.add("hidden");
+          if (overviewSec) overviewSec.classList.add("hidden");
+          if (showcaseSec) showcaseSec.classList.add("hidden");
+          
+          if (videoDescSec) {
+            videoDescSec.classList.remove("hidden");
+            const descTextEl = document.getElementById("modal-video-desc-text");
+            if (descTextEl) descTextEl.innerText = data.videoDesc || "";
+          }
+
+          if (scrollContainer) {
+            scrollContainer.classList.remove("max-w-[1000px]");
+            scrollContainer.classList.add("max-w-[1200px]"); // Enlarge modal & video player container width!
+          }
+        } else {
+          // Standard Image Mode
+          if (imgEl) {
+            imgEl.classList.remove("hidden");
+            imgEl.src = data.cover;
+          }
+          if (videoEl) {
+            videoEl.classList.add("hidden");
+            videoEl.src = "";
+          }
+          if (metaGrid) metaGrid.classList.remove("hidden");
+          if (overviewSec) overviewSec.classList.remove("hidden");
+          if (showcaseSec) showcaseSec.classList.remove("hidden");
+          if (videoDescSec) videoDescSec.classList.add("hidden");
+
+          if (scrollContainer) {
+            scrollContainer.classList.remove("max-w-[1200px]");
+            scrollContainer.classList.add("max-w-[1000px]");
+          }
+        }
+
+        const g1 = document.getElementById("modal-gallery-1");
+        if (g1) g1.src = data.gallery1 || "";
+        const g2 = document.getElementById("modal-gallery-2");
+        if (g2) g2.src = data.gallery2 || "";
+        
+        document.getElementById("modal-meta-role").innerText = data.role || "";
+        document.getElementById("modal-meta-client").innerText = data.client || "";
+        document.getElementById("modal-meta-deliverables").innerText = data.deliverables || "";
+        document.getElementById("modal-meta-timeline").innerText = data.timeline || "";
+        document.getElementById("modal-overview-text").innerText = data.overview || "";
+
+        projectModal.classList.remove("hidden");
+        document.getElementById("modal-close-btn").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+          projectModal.style.opacity = "1";
+        }, 30);
+      }
+
+      // Close Modal Function
+      function closeProjectModal() {
+        projectModal.style.opacity = "0";
+        document.getElementById("modal-close-btn").classList.add("hidden");
+        document.body.style.overflow = "";
+
+        // Stop video playback if active
+        const videoEl = document.getElementById("modal-cover-video");
+        if (videoEl) {
+          videoEl.pause();
+          videoEl.src = "";
+        }
+
+        setTimeout(() => {
+          projectModal.classList.add("hidden");
+          const scrollContainer = document.getElementById("modal-scroll-container");
+          if (scrollContainer) {
+            scrollContainer.classList.remove("max-w-[1200px]");
+            scrollContainer.classList.add("max-w-[1000px]");
+          }
+        }, 300);
+      }
+
+      // Bind click events to all UI Project & Other Design cards
+      document.querySelectorAll("#work [id^='project-card-'], #other-design-track > div").forEach((card, index) => {
+        card.addEventListener("click", () => {
+          const cardId = card.id || `project-card-${(index % 4) + 1}`;
+          openProjectModal(cardId);
+        });
+      });
+
+      // Escape key to close modal
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !projectModal.classList.contains("hidden")) {
+          closeProjectModal();
+        }
+      });
+      function copyToClipboard(text, btnEl) {
+        navigator.clipboard.writeText(text).then(() => {
+          const textSpan = btnEl.querySelector('span:first-child');
+          const originalText = textSpan.innerText;
+          textSpan.innerText = "已复制！";
+          btnEl.classList.add('bg-emerald-500', 'text-white', 'border-emerald-500');
+          setTimeout(() => {
+            textSpan.innerText = originalText;
+            btnEl.classList.remove('bg-emerald-500', 'text-white', 'border-emerald-500');
+          }, 2000);
+        });
+      }
+
+      // 7. Navigation Scroll & Active Section Highlighting
+      const navbarPill = document.getElementById("nav-pill");
+      
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbarPill.classList.add("shadow-lg", "shadow-black/40", "bg-[#1c1c24]/95", "border-white/20");
+        } else {
+          navbarPill.classList.remove("shadow-lg", "shadow-black/40", "bg-[#1c1c24]/95", "border-white/20");
+        }
+      });
+
+      // Intersection Observer for links
+      const observerLinks = document.querySelectorAll(".nav-link");
+      const sections = ["home", "about", "work", "explorations", "contact"];
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const activeId = entry.target.id;
+            observerLinks.forEach(link => {
+              const linkSec = link.getAttribute("data-sec");
+              if (linkSec === activeId) {
+                link.className = "nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-text-primary bg-stroke/60";
+              } else {
+                link.className = "nav-link text-xs md:text-sm font-medium rounded-full px-3 md:px-4 py-1.5 md:py-2 transition-all duration-200 text-muted hover:text-text-primary hover:bg-stroke/40";
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: "-25% 0px -55% 0px"
+      });
+
+      sections.forEach(secId => {
+        const el = document.getElementById(secId);
+        if (el) observer.observe(el);
+      });
+    </script>
+
+    <!-- SplashCursor Animation -->
+    <script src="./splash-cursor.js?v=32"></script>
+  </body>
+</html>
