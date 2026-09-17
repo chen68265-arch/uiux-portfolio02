@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
   --bg: 0 0% 4%;
@@ -11,13 +11,18 @@
 }
 
 body {
-  background-color: hsl(var(--bg));
+  background-color: #07070a;
   color: hsl(var(--text));
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Allow visible spatial ambient glows and grid to shine through sections */
+section, footer {
+  background-color: transparent !important;
 }
 
 /* Custom Scrollbar */
@@ -103,3 +108,136 @@ body {
 .transition-all-300 {
   transition: all 0.30s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
+/* ================================================= */
+/* VISIBLE HIGH-TECH SPATIAL BACKGROUND STYLING     */
+/* ================================================= */
+.spatial-tech-bg {
+  background-color: #0c0d14;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.18) 0%, transparent 65%),
+    radial-gradient(circle at 10% 40%, rgba(139, 92, 246, 0.15) 0%, transparent 55%),
+    radial-gradient(circle at 90% 70%, rgba(59, 130, 246, 0.16) 0%, transparent 60%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* Clearly Visible Architectural Blueprint Grid (88px, No Dots, Crisp & Modern) */
+.bg-blueprint-grid {
+  background-size: 88px 88px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.065) 1px, transparent 1px);
+}
+
+/* ================================================= */
+/* GIANT HYPE MARQUEE (超大潮感走字带 - 纯装饰非交互) */
+/* ================================================= */
+@keyframes giant-marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes giant-marquee-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-giant-marquee {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: giant-marquee 28s linear infinite;
+}
+
+.animate-giant-marquee-reverse {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: giant-marquee-reverse 32s linear infinite;
+}
+
+/* Pure Decorative - No Hover State & Fully Transparent */
+.giant-marquee-box {
+  pointer-events: none;
+  user-select: none;
+  background-color: transparent !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* Giant Outline / Hollow Typography (Clean Boolean-merged contours, zero internal overlaps) */
+.giant-stroke-text {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.35);
+  color: transparent;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+.giant-solid-text {
+  color: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+/* ================================================= */
+/* TRENDING DARK GLASS CARDS (OTHER DESIGN SECTION)  */
+/* ================================================= */
+.trending-dark-card {
+  position: relative;
+  border-radius: 26px;
+  padding: 1.5px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 45%, rgba(96, 206, 255, 0.16) 100%);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.75);
+}
+
+.trending-dark-card:hover {
+  background: linear-gradient(145deg, rgba(96, 206, 255, 0.85) 0%, rgba(59, 130, 246, 0.45) 50%, rgba(255, 255, 255, 0.25) 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px -10px rgba(59, 130, 246, 0.3), 0 0 25px rgba(96, 206, 255, 0.18);
+}
+
+.trending-dark-card-inner {
+  position: relative;
+  border-radius: 24.5px;
+  background: linear-gradient(180deg, #161720 0%, #0d0e13 100%);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.trending-dark-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ================================================= */
+/* CUSTOM AVANT-GARDE CURSOR (DESKTOP ONLY)          */
+/* ================================================= */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"],
+  body.has-custom-cursor input,
+  body.has-custom-cursor .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
+/* ================================================= */
+/* CASE STUDY IMAGE RENDERING SHARPNESS ENHANCEMENT  */
+/* ================================================= */
+#modal-images-container img {
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+

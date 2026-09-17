@@ -6,6 +6,11 @@
     <title>Michael Smith — Portfolio Cosmic</title>
     <meta name="description" content="Visual portfolio of Michael Smith, creative developer and designer. Featuring selected works, digital explorations, and traditional motion principles applied to spatial interfaces." />
     
+    <!-- Preconnect & Load Google Fonts (Plus Jakarta Sans & Instrument Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,16 +26,17 @@
               accent: 'hsl(var(--accent))',
             },
             fontFamily: {
-              body: ['Inter', 'sans-serif'],
-              display: ['Instrument Serif', 'serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              body: ['"Plus Jakarta Sans"', 'sans-serif'],
+              display: ['"Instrument Serif"', 'serif'],
             }
           }
         }
       }
     </script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./index.css" />
+    <!-- Custom CSS (with version query to prevent stale browser cache) -->
+    <link rel="stylesheet" href="./index.css?v=43" />
 
     <!-- External Animation and Media Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -38,6 +44,24 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
   </head>
   <body class="bg-bg text-text-primary selection:bg-stroke selection:text-text-primary">
+
+    <!-- ========================================== -->
+    <!-- VISIBLE HIGH-TECH SPATIAL BACKGROUND LAYER -->
+    <!-- ========================================== -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none bg-[#070709]">
+      <!-- Spacious Architectural Blueprint Grid (NO DOTS, Wide 88px, Clean Subtle Lines) -->
+      <div class="absolute inset-0 bg-blueprint-grid"></div>
+
+      <!-- Localized Deep Blue Ambient Gradients Emerging from Black (黑中局部幽蓝微光 - 适度收敛模糊半径更加凝练深邃) -->
+      <!-- Glow 1: Top-Center Gentle Royal Blue Pool (blur reduced from 80px to 55px) -->
+      <div class="absolute -top-[160px] left-1/2 -translate-x-1/2 w-[1000px] h-[650px] rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.36)_0%,rgba(30,58,138,0.18)_45%,transparent_75%)] blur-[55px]"></div>
+
+      <!-- Glow 2: Middle-Right Deep Ocean & Indigo Pool (blur reduced from 90px to 65px) -->
+      <div class="absolute top-[35%] -right-[120px] w-[850px] h-[850px] rounded-full bg-[radial-gradient(circle,rgba(29,78,216,0.32)_0%,rgba(30,58,138,0.16)_50%,transparent_75%)] blur-[65px]"></div>
+
+      <!-- Glow 3: Lower-Left Gentle Dark Blue Ambience (blur reduced from 90px to 65px) -->
+      <div class="absolute -bottom-[120px] -left-[120px] w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.30)_0%,rgba(30,64,175,0.14)_50%,transparent_75%)] blur-[65px]"></div>
+    </div>
 
     <!-- ========================================== -->
     <!-- SECTION 1: LOADING SCREEN                  -->
@@ -141,7 +165,7 @@
             <span class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-[1.5px]" style="background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);">
               <span class="block w-full h-full rounded-full bg-bg"></span>
             </span>
-            <span class="relative z-10">See Works</span>
+            <span class="relative z-10">Selected Works</span>
           </a>
 
           <a href="./resume.pdf" download="Michael_Smith_Resume.pdf" class="relative group rounded-full text-sm font-semibold px-7 py-3.5 bg-surface/80 text-text-primary transition-all duration-300 hover:scale-105 border border-white/15 overflow-hidden hover:border-white/40 flex items-center gap-2.5">
@@ -162,6 +186,41 @@
       </div>
     </section>
 
+    <!-- ========================================== -->
+    <!-- SECTION 2.2: GIANT HYPE MARQUEE (HERO EXIT)-->
+    <!-- ========================================== -->
+    <div class="giant-marquee-box pointer-events-none relative w-full overflow-hidden py-10 md:py-16 border-y border-white/15 bg-transparent select-none z-20">
+      <div class="animate-giant-marquee flex items-center gap-10 md:gap-16 whitespace-nowrap text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-sans font-black tracking-tighter leading-none uppercase">
+        <div class="flex items-center gap-10 md:gap-16 shrink-0">
+          <span class="giant-solid-text">SPATIAL OS</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">AI WORKSPACE</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-solid-text">INTERACTION</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">CREATIVE CODE</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-solid-text">NEXT-GEN UI</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">MOTION CRAFT</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+        </div>
+        <div class="flex items-center gap-10 md:gap-16 shrink-0" aria-hidden="true">
+          <span class="giant-solid-text">SPATIAL OS</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">AI WORKSPACE</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-solid-text">INTERACTION</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">CREATIVE CODE</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-solid-text">NEXT-GEN UI</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          <span class="giant-stroke-text">MOTION CRAFT</span>
+          <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ========================================== -->
     <!-- SECTION 2.5: ABOUT & PROFILE SECTION      -->
@@ -338,10 +397,10 @@
               <div class="flex items-start justify-between gap-4 px-2">
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
-                    Cybernetic Audio DAW Platform
+                    DragonPass 龙腾出行 Pro 改版 9.0
                   </h3>
                   <p class="text-xs md:text-sm text-muted">
-                    高阶沉浸式数字音频工作站系统设计
+                    高端出行服务与机场高铁贵宾体验重构
                   </p>
                 </div>
                 <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
@@ -359,7 +418,7 @@
             <div id="project-card-2" class="group flex flex-col gap-5 cursor-pointer">
               <!-- Cover Image Box (Aspect Ratio 3:4, Organic Rest Angle rotate-4, Straightens to rotate-0 on Hover) -->
               <div class="w-full aspect-[3/4] rounded-[28px] md:rounded-[36px] overflow-hidden bg-surface relative border border-white/10 shadow-2xl transition-all duration-500 rotate-3 md:rotate-4 group-hover:rotate-0 group-hover:scale-105 group-hover:shadow-[0_25px_60px_rgba(59,106,246,0.25)]">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000" alt="UI Project 2" class="w-full h-full object-cover select-none" />
+                <img src="./picture/UI4fm.png" alt="DRAGONPASS SCRM云平台 封面" class="w-full h-full object-cover select-none" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
               
@@ -367,10 +426,10 @@
               <div class="flex items-start justify-between gap-4 px-2">
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
-                    FinTech Neo-Banking Dashboard
+                    DRAGONPASS SCRM云平台
                   </h3>
                   <p class="text-xs md:text-sm text-muted">
-                    暗黑极简数字资产管理与金融仪表盘
+                    B端企业级客户关系管理系统与协同工作流设计
                   </p>
                 </div>
                 <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
@@ -391,10 +450,10 @@
               <div class="flex items-start justify-between gap-4 px-2">
                 <div class="flex flex-col gap-1">
                   <h3 class="text-xl md:text-2xl font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">
-                    Autonomous Mobility App Interface
+                    互联网品牌数据监测大屏
                   </h3>
                   <p class="text-xs md:text-sm text-muted">
-                    未来智能出行与自动驾驶座舱交互系统
+                    全球声量与互动量实时态势感知可视化系统
                   </p>
                 </div>
                 <div class="w-10 h-10 rounded-full border border-stroke flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-all duration-300">
@@ -418,7 +477,7 @@
       <div id="other-design-pinned" class="h-screen w-full flex flex-col justify-center relative overflow-hidden py-12">
         
         <!-- Header (Centered Title and Subtitle) -->
-        <div class="max-w-[1200px] w-full mx-auto px-6 md:px-10 lg:px-16 mb-12 md:mb-16 flex flex-col items-center text-center gap-2 shrink-0">
+        <div class="max-w-[1200px] w-full mx-auto px-6 md:px-10 lg:px-16 mb-6 md:mb-8 flex flex-col items-center text-center gap-2 shrink-0">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-text-primary">
             Other Design
           </h2>
@@ -427,77 +486,200 @@
           </p>
         </div>
 
-        <!-- Horizontal Scroll Track (High-Contrast Standout Cards) -->
-        <div class="w-full overflow-hidden flex items-center">
-          <div id="other-design-track" class="flex flex-nowrap gap-6 md:gap-8 px-6 md:px-10 lg:px-16 items-center shrink-0">
+        <!-- Horizontal Scroll Track (High-Contrast Standout Cards with Generous Hover Padding) -->
+        <div class="w-full overflow-hidden flex items-center py-4">
+          <div id="other-design-track" class="flex flex-nowrap gap-6 md:gap-8 px-6 md:px-10 lg:px-16 py-10 md:py-14 items-center shrink-0">
             
-            <!-- Horizontal Card 1 (Distinct Dark Glass Surface - Video Card) -->
-            <div id="other-design-video-card" class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
-              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
-                <img src="./aigc-cover.png" alt="奕境x9世界杯AIGC创意视频" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
-                <div class="flex flex-col gap-0.5">
-                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">奕境x9世界杯AIGC创意视频</h3>
-                  <p class="text-xs text-muted">AIGC 创意视频 • 3D混合动漫</p>
+            <!-- Card 1 (Video Card - AIGC 创意视频) -->
+            <div id="other-design-video-card" class="trending-dark-card group w-[300px] sm:w-[350px] md:w-[390px] shrink-0 cursor-pointer">
+              <div class="trending-dark-card-inner">
+                <!-- Ambient Card Inner Glow -->
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#60CEFF]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <!-- Inset Media Canvas -->
+                <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#0a0b10] border border-white/10 shadow-inner">
+                  <img src="./aigc-cover.png" alt="奕境x9世界杯AIGC创意视频" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                  
+                  <!-- Gradient Shadow Overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                  <!-- Top-Left Translucent Glass Pill Badge -->
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#60CEFF] shadow-[0_0_6px_#60CEFF]"></span>
+                    <span class="text-[10px] font-mono font-medium tracking-wider text-white/90 uppercase">AIGC 3D • 2026</span>
+                  </div>
+
+                  <!-- Video Play Indicator Badge (Bottom-Right) -->
+                  <div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white group-hover:bg-[#60CEFF] group-hover:text-black transition-colors duration-300">
+                    <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <span class="font-bold tracking-wide">PLAY</span>
+                  </div>
                 </div>
-                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+
+                <!-- Bottom Content Meta Area -->
+                <div class="pt-4 pb-1 px-1 flex items-center justify-between gap-3">
+                  <div class="flex flex-col gap-1 min-w-0">
+                    <span class="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[#60CEFF]">AIGC VIDEO</span>
+                    <h3 class="text-base md:text-lg font-bold font-sans text-white tracking-tight truncate group-hover:text-white transition-colors">
+                      奕境x9世界杯AIGC创意视频
+                    </h3>
+                    <p class="text-xs text-muted/80 truncate">
+                      3D混合动漫 • 激光雷达智慧投影创意演绎
+                    </p>
+                  </div>
+
+                  <!-- Micro Interactive Action Ring Button -->
+                  <div class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/70 group-hover:bg-white group-hover:text-black group-hover:scale-110 group-hover:border-white transition-all duration-300 shadow-md shrink-0">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            <!-- Horizontal Card 2 -->
-            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
-              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000" alt="Atelier Bloom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
-                <div class="flex flex-col gap-0.5">
-                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Atelier Bloom</h3>
-                  <p class="text-xs text-muted">E-commerce • Beauty & wellness</p>
+            <!-- Card 2 (Atelier Bloom) -->
+            <div id="other-design-card-2" class="trending-dark-card group w-[300px] sm:w-[350px] md:w-[390px] shrink-0 cursor-pointer">
+              <div class="trending-dark-card-inner">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#60CEFF]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#0a0b10] border border-white/10 shadow-inner">
+                  <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000" alt="Atelier Bloom" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]"></span>
+                    <span class="text-[10px] font-mono font-medium tracking-wider text-white/90 uppercase">E-COMMERCE • 2025</span>
+                  </div>
                 </div>
-                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+
+                <div class="pt-4 pb-1 px-1 flex items-center justify-between gap-3">
+                  <div class="flex flex-col gap-1 min-w-0">
+                    <span class="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[#60CEFF]">BRAND & COMMERCE</span>
+                    <h3 class="text-base md:text-lg font-bold font-sans text-white tracking-tight truncate group-hover:text-white transition-colors">
+                      Atelier Bloom
+                    </h3>
+                    <p class="text-xs text-muted/80 truncate">
+                      高端护肤美学电商界面与数字视觉系统
+                    </p>
+                  </div>
+
+                  <div class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/70 group-hover:bg-white group-hover:text-black group-hover:scale-110 group-hover:border-white transition-all duration-300 shadow-md shrink-0">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            <!-- Horizontal Card 3 -->
-            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
-              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
-                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1000" alt="Harbor Booking" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
-                <div class="flex flex-col gap-0.5">
-                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Harbor Booking System</h3>
-                  <p class="text-xs text-muted">Booking • Mobility & Travel</p>
+            <!-- Card 3 (Harbor Booking System) -->
+            <div id="other-design-card-3" class="trending-dark-card group w-[300px] sm:w-[350px] md:w-[390px] shrink-0 cursor-pointer">
+              <div class="trending-dark-card-inner">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#60CEFF]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#0a0b10] border border-white/10 shadow-inner">
+                  <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1000" alt="Harbor Booking System" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]"></span>
+                    <span class="text-[10px] font-mono font-medium tracking-wider text-white/90 uppercase">SAAS WEB • 2025</span>
+                  </div>
                 </div>
-                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+
+                <div class="pt-4 pb-1 px-1 flex items-center justify-between gap-3">
+                  <div class="flex flex-col gap-1 min-w-0">
+                    <span class="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[#60CEFF]">MOBILITY PLATFORM</span>
+                    <h3 class="text-base md:text-lg font-bold font-sans text-white tracking-tight truncate group-hover:text-white transition-colors">
+                      Harbor Booking System
+                    </h3>
+                    <p class="text-xs text-muted/80 truncate">
+                      全球游艇与码头数字化预订与资产调度系统
+                    </p>
+                  </div>
+
+                  <div class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/70 group-hover:bg-white group-hover:text-black group-hover:scale-110 group-hover:border-white transition-all duration-300 shadow-md shrink-0">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            <!-- Horizontal Card 4 -->
-            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
-              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000" alt="Cybernetic Audio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
-                <div class="flex flex-col gap-0.5">
-                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Cybernetic Spatial Audio</h3>
-                  <p class="text-xs text-muted">Audio Interface • VisionOS</p>
+            <!-- Card 4 (Cybernetic Spatial Audio) -->
+            <div id="other-design-card-4" class="trending-dark-card group w-[300px] sm:w-[350px] md:w-[390px] shrink-0 cursor-pointer">
+              <div class="trending-dark-card-inner">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#60CEFF]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#0a0b10] border border-white/10 shadow-inner">
+                  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000" alt="Cybernetic Spatial Audio" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#60CEFF] shadow-[0_0_6px_#60CEFF]"></span>
+                    <span class="text-[10px] font-mono font-medium tracking-wider text-white/90 uppercase">VISION OS • 2026</span>
+                  </div>
                 </div>
-                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+
+                <div class="pt-4 pb-1 px-1 flex items-center justify-between gap-3">
+                  <div class="flex flex-col gap-1 min-w-0">
+                    <span class="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[#60CEFF]">SPATIAL INTERFACE</span>
+                    <h3 class="text-base md:text-lg font-bold font-sans text-white tracking-tight truncate group-hover:text-white transition-colors">
+                      Cybernetic Spatial Audio
+                    </h3>
+                    <p class="text-xs text-muted/80 truncate">
+                      VisionOS 空间音频混音台与沉浸式声场控制
+                    </p>
+                  </div>
+
+                  <div class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/70 group-hover:bg-white group-hover:text-black group-hover:scale-110 group-hover:border-white transition-all duration-300 shadow-md shrink-0">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            <!-- Horizontal Card 5 -->
-            <div class="group relative w-[280px] sm:w-[340px] md:w-[380px] rounded-[24px] overflow-hidden bg-[#1a1a20] border border-white/20 shadow-[0_15px_40px_rgba(0,0,0,0.65)] shrink-0 cursor-pointer flex flex-col transition-all duration-500 hover:border-[#3b6af6] hover:bg-[#202028] hover:shadow-[0_20px_50px_rgba(59,106,246,0.25)]">
-              <div class="w-full aspect-[16/10] overflow-hidden bg-[#121215] relative">
-                <img src="https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1000" alt="Neon Synth" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div class="p-5 bg-[#131317] border-t border-white/15 flex items-center justify-between gap-3">
-                <div class="flex flex-col gap-0.5">
-                  <h3 class="text-base md:text-lg font-bold font-sans text-text-primary group-hover:text-accent transition-colors duration-300">Neon Synth Brand</h3>
-                  <p class="text-xs text-muted">Brand Design • CGI Art</p>
+            <!-- Card 5 (Neon Synth Brand) -->
+            <div id="other-design-card-5" class="trending-dark-card group w-[300px] sm:w-[350px] md:w-[390px] shrink-0 cursor-pointer">
+              <div class="trending-dark-card-inner">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#60CEFF]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden bg-[#0a0b10] border border-white/10 shadow-inner">
+                  <img src="https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1000" alt="Neon Synth Brand" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+                  <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400 shadow-[0_0_6px_#c084fc]"></span>
+                    <span class="text-[10px] font-mono font-medium tracking-wider text-white/90 uppercase">CGI ART • 2024</span>
+                  </div>
                 </div>
-                <span class="text-xs font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 shrink-0">View project →</span>
+
+                <div class="pt-4 pb-1 px-1 flex items-center justify-between gap-3">
+                  <div class="flex flex-col gap-1 min-w-0">
+                    <span class="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-[#60CEFF]">CGI & IDENTITY</span>
+                    <h3 class="text-base md:text-lg font-bold font-sans text-white tracking-tight truncate group-hover:text-white transition-colors">
+                      Neon Synth Brand
+                    </h3>
+                    <p class="text-xs text-muted/80 truncate">
+                      先锋电子音乐厂牌视觉识别与 3D 动态图形
+                    </p>
+                  </div>
+
+                  <div class="w-10 h-10 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/70 group-hover:bg-white group-hover:text-black group-hover:scale-110 group-hover:border-white transition-all duration-300 shadow-md shrink-0">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -654,12 +836,42 @@
 
         </div>
 
+      </div>
+
+      <!-- ========================================== -->
+      <!-- SECTION 7.5: GIANT HYPE MARQUEE (PAGE END) -->
+      <!-- ========================================== -->
+      <div class="giant-marquee-box pointer-events-none relative w-full overflow-hidden py-10 md:py-16 border-y border-white/15 bg-transparent select-none mt-20 mb-10 z-20">
+        <div class="animate-giant-marquee-reverse flex items-center gap-10 md:gap-16 whitespace-nowrap text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-sans font-black tracking-tighter leading-none uppercase">
+          <div class="flex items-center gap-10 md:gap-16 shrink-0">
+            <span class="giant-solid-text">AVAILABLE FOR 2026</span>
+            <span class="text-white/60 text-3xl md:text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">●</span>
+            <span class="giant-stroke-text">LET'S WORK TOGETHER</span>
+            <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+            <span class="giant-solid-text">GET IN TOUCH</span>
+            <span class="text-white/60 text-3xl md:text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">●</span>
+            <span class="giant-stroke-text">HELLO@MICHAELSMITH.COM</span>
+            <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          </div>
+          <div class="flex items-center gap-10 md:gap-16 shrink-0" aria-hidden="true">
+            <span class="giant-solid-text">AVAILABLE FOR 2026</span>
+            <span class="text-white/60 text-3xl md:text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">●</span>
+            <span class="giant-stroke-text">LET'S WORK TOGETHER</span>
+            <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+            <span class="giant-solid-text">GET IN TOUCH</span>
+            <span class="text-white/60 text-3xl md:text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">●</span>
+            <span class="giant-stroke-text">HELLO@MICHAELSMITH.COM</span>
+            <span class="text-white/60 text-4xl md:text-6xl drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">✦</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         <!-- Copyright -->
-        <div class="w-full border-t border-stroke/40 mt-16 pt-8 flex items-center justify-between gap-4 text-xs text-muted">
+        <div class="w-full border-t border-stroke/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
           <span>© 2026 Michael Smith. All rights reserved.</span>
           <span>Designed with Precision & Intent</span>
         </div>
-
       </div>
     </footer>
 
@@ -675,96 +887,129 @@
     </div>
 
 
-    <!-- FIXED CLOSE BUTTON (MUST BE OUTSIDE SCROLL CONTAINER & BLUR PARENT FOR TRUE VIEWPORT PINNING) -->
-    <button id="modal-close-btn" onclick="closeProjectModal()" class="fixed top-6 right-6 md:top-8 md:right-8 z-[100005] w-12 h-12 rounded-full bg-[#1c1c24] border border-white/30 text-white flex items-center justify-center text-xl hover:scale-110 hover:bg-white hover:text-black transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.8)] cursor-pointer hidden">
-      ✕
-    </button>
-
-    <!-- FULL-PAGE SCROLLABLE PROJECT DETAIL MODAL CONTAINER -->
-    <div id="project-modal" class="fixed inset-0 z-[100000] bg-black/60 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 overflow-y-auto select-text">
-      <!-- Scrollable Container -->
-      <div id="modal-scroll-container" class="min-h-screen w-full max-w-[1000px] mx-auto px-6 py-20 md:py-28 flex flex-col gap-12 text-text-primary" onclick="event.stopPropagation()">
-        
-        <!-- Modal Hero Image & Header -->
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-3">
-            <span id="modal-tag" class="px-3.5 py-1 rounded-full bg-[#60CEFF]/10 border border-[#60CEFF]/30 text-xs font-semibold text-[#60CEFF] tracking-wider">
-              UI/UX DESIGN CASE
-            </span>
-            <span id="modal-year" class="text-xs text-muted font-medium">2026</span>
-          </div>
-
-          <h1 id="modal-title" class="text-4xl md:text-6xl font-bold font-sans tracking-tight text-white leading-tight">
-            Spatial OS & AI Workspace UI
+    <!-- FULL-PAGE SCROLLABLE BEHANCE-STYLE PROJECT DETAIL MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-[100000] bg-[#070709] hidden opacity-0 transition-opacity duration-300 overflow-y-auto select-text">
+      
+      <!-- Sticky Clean Header Bar (Behance Style: Title on Left, Close on Right, No Dot, Aligned) -->
+      <div id="modal-sticky-header" class="sticky top-0 z-50 w-full bg-[#070709]/95 backdrop-blur-xl border-b border-white/10 px-6 md:px-10 h-14 sm:h-16 flex items-center justify-between">
+        <div class="flex items-center min-w-0 pr-4">
+          <h1 id="modal-title" class="text-base sm:text-lg md:text-xl font-bold font-sans text-white tracking-tight truncate">
+            Project Title
           </h1>
+        </div>
+        <button onclick="closeProjectModal()" class="group w-11 h-11 md:w-12 md:h-12 rounded-full bg-transparent hover:bg-white/15 text-white/90 hover:text-white flex items-center justify-center transition-all duration-200 cursor-pointer shrink-0" title="关闭页面 (Esc)">
+          <svg class="w-6 h-6 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
 
-          <p id="modal-subtitle" class="text-base md:text-xl text-muted leading-relaxed">
-            下一代空间计算与 AI 协同工作站界面设计探索
-          </p>
+      <!-- Scrollable Case Study Container (Narrowed Behance Standard: max-w-[1140px], Balanced Top Spacing) -->
+      <div id="modal-scroll-container" class="min-h-screen w-full max-w-[1140px] 2xl:max-w-[1180px] mx-auto px-4 sm:px-6 md:px-8 pt-5 pb-16 md:pt-6 md:pb-24 flex flex-col items-center gap-0" onclick="event.stopPropagation()">
+        
+        <!-- Video Container (Only Active for Video Projects) -->
+        <div id="modal-video-container" class="hidden w-full aspect-[16/9] rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/15 relative bg-black mb-6">
+          <video id="modal-cover-video" src="" controls class="w-full h-full object-cover" preload="metadata"></video>
         </div>
 
-        <!-- Hero Cover / Video Container -->
-        <div class="w-full aspect-[16/9] rounded-[28px] md:rounded-[36px] overflow-hidden border border-white/15 shadow-2xl relative bg-surface">
-          <img id="modal-cover-img" src="" alt="Project Cover" class="w-full h-full object-cover" />
-          <video id="modal-cover-video" src="" controls class="w-full h-full object-cover hidden" preload="metadata"></video>
+        <!-- Video Description Section (Only Active for Video Projects) -->
+        <div id="modal-video-desc-section" class="hidden w-full py-4 text-base md:text-lg text-white/90 leading-relaxed font-medium px-2">
+          <p id="modal-video-desc-text"></p>
         </div>
 
-        <!-- Project Metadata Grid -->
-        <div id="modal-meta-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-[28px] bg-[#1a1a20]/90 border border-white/15 backdrop-blur-md">
-          <div class="flex flex-col gap-1">
-            <span class="text-xs text-muted font-medium uppercase tracking-wider">Role</span>
-            <span id="modal-meta-role" class="text-sm font-bold text-white">Lead UI/UX Designer</span>
+        <!-- Seamless Long Case Study Images Stream (Zero Gap, 4-Corner Rounded Canvas) -->
+        <div id="modal-images-container" class="w-full flex flex-col gap-0 rounded-[20px] md:rounded-[24px] overflow-hidden isolate bg-[#070709]">
+        </div>
+
+        <!-- Fallback Placeholder (when project has no images yet) -->
+        <div id="modal-placeholder-card" class="hidden w-full h-[600px] md:h-[900px] rounded-[20px] md:rounded-[24px] bg-[#101015] border border-white/10 flex flex-col items-center justify-center p-8 text-white/40 font-mono text-sm uppercase tracking-widest text-center my-6">
+          <svg class="w-16 h-16 mb-4 text-white/20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+          </svg>
+          <span>UI DESIGN CASE STUDY COMING SOON</span>
+        </div>
+
+        <!-- Option C: Dual Prev / Next Project Navigation Bar -->
+        <div id="modal-project-nav" class="w-full mt-12 mb-4 pt-10 border-t border-white/10">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-white/30">EXPLORE MORE PROJECTS / 探索更多</span>
+            <div class="h-[1px] flex-1 bg-white/10 max-w-[200px] hidden sm:block"></div>
           </div>
-          <div class="flex flex-col gap-1">
-            <span class="text-xs text-muted font-medium uppercase tracking-wider">Client</span>
-            <span id="modal-meta-client" class="text-sm font-bold text-white">Spatial Vision Inc.</span>
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="text-xs text-muted font-medium uppercase tracking-wider">Deliverables</span>
-            <span id="modal-meta-deliverables" class="text-sm font-bold text-white">Design System & App</span>
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="text-xs text-muted font-medium uppercase tracking-wider">Timeline</span>
-            <span id="modal-meta-timeline" class="text-sm font-bold text-white">3 Months</span>
-          </div>
-        </div>
-
-        <!-- Deep-Dive Content Sections -->
-        <div id="modal-overview-section" class="flex flex-col gap-6 text-sm md:text-base leading-relaxed text-muted border-t border-stroke/50 pt-8">
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-sans">01. Design Context & Strategy</h2>
-          <p id="modal-overview-text">
-            在现代空间计算与 AI 交互时代，传统二维界面的信息承载效率正面临瓶颈。本项目旨在重新构想人机协作机制，融合 3D 浮动面板、智能上下文菜单与声控手势混合控制，为专业创造者提供无缝的工作流。
-          </p>
-        </div>
-
-        <!-- Video Description Section (Only for Video Projects) -->
-        <div id="modal-video-desc-section" class="hidden flex flex-col gap-4 text-sm md:text-base leading-relaxed text-muted border-t border-stroke/50 pt-8">
-          <p id="modal-video-desc-text" class="text-base md:text-lg text-white leading-relaxed font-medium">
-            视频通过 3D混合动漫风格的 AIGC 画面，生动演绎了画中角色逃跑并加入阿根廷夺冠合影的趣味故事，硬核且幽默地凸显了奕境X9搭载的激光雷达与百万像素智慧投影大灯的超强感知力。
-          </p>
-        </div>
-
-        <!-- Showcase Section: Full-Width White Long Image Placeholder (Screenshot 4 Red Box) -->
-        <div id="modal-showcase-section" class="flex flex-col gap-6">
-          <h2 class="text-2xl md:text-3xl font-bold text-white font-sans">02. Interface Showcase</h2>
           
-          <!-- Full-Width White Long Placeholder Card -->
-          <div class="w-full h-[1200px] md:h-[1800px] rounded-[28px] bg-white border border-white/20 shadow-2xl flex flex-col items-center justify-center p-8 text-black/50 font-mono text-sm md:text-base uppercase tracking-widest text-center">
-            <svg class="w-16 h-16 mb-4 text-black/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
-            </svg>
-            <span>LONG UI INTERFACE CASE STUDY IMAGE PLACEHOLDER</span>
-            <span class="text-xs text-black/40 mt-2">（整页高精 UI 设计细节长图占位）</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            
+            <!-- Previous Project Card -->
+            <div id="modal-nav-prev" class="group relative flex items-center gap-4 p-5 md:p-6 rounded-[22px] bg-[#101117]/90 hover:bg-[#181a24] border border-white/10 hover:border-white/25 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)]">
+              <div class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/[0.06] border border-white/10 group-hover:bg-[#60CEFF] group-hover:border-[#60CEFF] flex items-center justify-center text-white/70 group-hover:text-black shrink-0 transition-all duration-300 shadow-sm">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"/>
+                </svg>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="text-[10px] md:text-[11px] font-mono uppercase tracking-wider text-muted/70 group-hover:text-[#60CEFF] transition-colors">
+                  ← PREV PROJECT
+                </span>
+                <h4 id="modal-nav-prev-title" class="text-sm md:text-base font-bold text-white tracking-tight truncate mt-1 group-hover:text-white transition-colors">
+                  上一个项目
+                </h4>
+                <p id="modal-nav-prev-tag" class="text-[11px] text-muted/60 truncate mt-0.5 font-sans">
+                  Category
+                </p>
+              </div>
+            </div>
+
+            <!-- Next Project Card -->
+            <div id="modal-nav-next" class="group relative flex items-center justify-between gap-4 p-5 md:p-6 rounded-[22px] bg-[#101117]/90 hover:bg-[#181a24] border border-white/10 hover:border-white/25 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] text-right">
+              <div class="flex flex-col min-w-0 text-left sm:text-right w-full">
+                <span class="text-[10px] md:text-[11px] font-mono uppercase tracking-wider text-muted/70 group-hover:text-[#60CEFF] transition-colors">
+                  NEXT PROJECT →
+                </span>
+                <h4 id="modal-nav-next-title" class="text-sm md:text-base font-bold text-white tracking-tight truncate mt-1 group-hover:text-white transition-colors">
+                  下一个项目
+                </h4>
+                <p id="modal-nav-next-tag" class="text-[11px] text-muted/60 truncate mt-0.5 font-sans">
+                  Category
+                </p>
+              </div>
+              <div class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/[0.06] border border-white/10 group-hover:bg-[#60CEFF] group-hover:border-[#60CEFF] flex items-center justify-center text-white/70 group-hover:text-black shrink-0 transition-all duration-300 shadow-sm">
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/>
+                </svg>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Footer Back/Close Button -->
-        <div class="flex justify-center pt-8 border-t border-stroke/50">
-          <button onclick="closeProjectModal()" class="px-8 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-white/90 transition-all duration-300 shadow-xl hover:scale-105">
-            关闭详情页面
-          </button>
+        <!-- Minimal Subtle End Space & Micro-Text -->
+        <div id="modal-bottom-end-mark" class="w-full flex items-center justify-center pt-6 pb-6 text-white/20 text-xs font-mono tracking-widest uppercase select-none">
+          <span>— END OF CASE STUDY · 感谢观看 —</span>
         </div>
 
+      </div>
+
+      <!-- Floating Back to Top Button (Fixed at Bottom-Right of Screen) -->
+      <button id="modal-float-back-top" onclick="document.getElementById('project-modal').scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-6 md:bottom-10 md:right-10 z-[70] w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#16171e]/90 hover:bg-white text-white/80 hover:text-black border border-white/15 hover:border-white/40 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.6)] flex items-center justify-center transition-all duration-300 cursor-pointer opacity-0 pointer-events-none hover:scale-110 active:scale-95 group" title="返回顶部">
+        <svg class="w-5 h-5 transition-transform duration-200 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+        </svg>
+      </button>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- CUSTOM DESIGNER CURSOR (NEO-BRUTALIST ARROW)-->
+    <!-- ========================================== -->
+    <div id="custom-cursor" class="fixed top-0 left-0 pointer-events-none z-[999999] opacity-0 transition-opacity duration-300 hidden md:block select-none" aria-hidden="true">
+      <div id="cursor-arrow" class="relative origin-top-left transition-transform duration-200 ease-out">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" class="drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)] drop-shadow-[0_0_1px_rgba(0,0,0,0.9)]">
+          <path d="M5 4L26 17L15.5 18.5L10 28.5L5 4Z" fill="#ffffff" stroke="#070709" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div id="cursor-tag" class="absolute left-7 top-5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0a0b10]/90 backdrop-blur-md border border-white/22 text-[#60CEFF] font-mono text-[10px] font-bold tracking-wider uppercase shadow-2xl whitespace-nowrap opacity-0 scale-90 translate-y-1 transition-all duration-200 origin-top-left pointer-events-none">
+        <span id="cursor-tag-dot" class="w-1.5 h-1.5 rounded-full bg-[#60CEFF] shadow-[0_0_6px_#60CEFF]"></span>
+        <span id="cursor-tag-text">VIEW</span>
       </div>
     </div>
 
@@ -1163,12 +1408,68 @@
       const projectDetailsData = {
         "other-design-video-card": {
           title: "奕境x9世界杯AIGC创意视频",
-          subtitle: "",
+          subtitle: "AIGC 创意视频 • 3D混合动漫 • 激光雷达智慧投影创意演绎",
           tag: "AIGC VIDEO",
           year: "2026",
           cover: "./aigc-cover.png",
           videoSrc: "./视频1.mp4",
           videoDesc: "视频通过 3D混合动漫风格的 AIGC 画面，生动演绎了画中角色逃跑并加入阿根廷夺冠合影的趣味故事，硬核且幽默地凸显了奕境X9搭载的激光雷达与百万像素智慧投影大灯的超强感知力。"
+        },
+        "other-design-card-2": {
+          title: "Atelier Bloom",
+          subtitle: "高端护肤美学电商界面与数字视觉系统",
+          tag: "BRAND & COMMERCE",
+          year: "2025",
+          cover: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1200",
+          role: "Lead Visual & UI Designer",
+          client: "Atelier Bloom Paris",
+          deliverables: "E-Commerce System, 3D Assets",
+          timeline: "2 Months",
+          overview: "为高端有机护肤品牌 Atelier Bloom 打造的极简电商界面。结合细腻的流体微动效与优雅无衬线排版，传递清透、纯净的美学质感。"
+        },
+        "other-design-card-3": {
+          title: "Harbor Booking System",
+          subtitle: "全球游艇与码头数字化预订与资产调度系统",
+          tag: "MOBILITY PLATFORM",
+          year: "2025",
+          cover: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+          role: "Product Designer",
+          client: "Harbor Club Global",
+          deliverables: "Web App & Dashboard",
+          timeline: "3 Months",
+          overview: "专为游艇俱乐部与高端出行旅客定制的码头泊位预订中台。通过直观的地理测绘网格与即时天气潮汐可视化，实现极简的预约调度流程。"
+        },
+        "other-design-card-4": {
+          title: "Cybernetic Spatial Audio",
+          subtitle: "VisionOS 空间音频混音台与沉浸式声场控制",
+          tag: "SPATIAL INTERFACE",
+          year: "2026",
+          cover: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1200",
+          role: "Spatial UX Designer",
+          client: "Aether Sound Labs",
+          deliverables: "VisionOS App Prototype",
+          timeline: "6 Weeks",
+          overview: "基于 Apple VisionOS 平台探索的下一代三维空间音频交互界面。支持手势捏合放置三维声源球体，实时调制空间混响与多轨道音频滤波。"
+        },
+        "other-design-card-5": {
+          title: "Neon Synth Brand",
+          subtitle: "先锋电子音乐厂牌视觉识别与 3D 动态图形",
+          tag: "CGI & IDENTITY",
+          year: "2024",
+          cover: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1200",
+          gallery1: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
+          gallery2: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
+          role: "Art Director",
+          client: "Neon Synth Records",
+          deliverables: "Brand Identity, 3D CGI",
+          timeline: "1 Month",
+          overview: "融合复古赛博朋克与当代极简主义的音乐厂牌品牌视觉体系。通过高保真三维着色器渲染与动态几何排版，强化电音文化的冲击力与先锋感。"
         },
         "project-card-1": {
           title: "Spatial OS & AI Workspace UI",
@@ -1176,8 +1477,6 @@
           tag: "SPATIAL COMPUTING & AI",
           year: "2026",
           cover: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-          gallery1: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
-          gallery2: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
           role: "Lead UI/UX Designer",
           client: "Spatial Vision Inc.",
           deliverables: "VisionOS Design System",
@@ -1185,136 +1484,173 @@
           overview: "在空间计算时代，人与三维数字资产的交互模式正在发生革命性跃迁。本设计为三维空间窗口、AI 上下文语义识别与多模态手势控制提供了极简的直觉式操作界面。"
         },
         "project-card-2": {
-          title: "FinTech Neo-Banking Dashboard",
-          subtitle: "暗黑极简数字资产管理与高频交易金融仪表盘",
-          tag: "FINTECH & SAAS",
+          title: "DRAGONPASS SCRM云平台",
+          subtitle: "B端企业级客户关系管理系统与协同工作流设计",
+          tag: "SCRM SYSTEM / B2B SAAS",
           year: "2025",
-          cover: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
-          gallery1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-          gallery2: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
-          role: "Product Designer",
-          client: "Aether Capital",
-          deliverables: "Web & Mobile Dashboard",
+          cover: "./picture/UI4fm.png",
+          images: [
+            "./picture/UI4-1.jpg",
+            "./picture/UI4-2.jpg",
+            "./picture/UI4-3.jpg",
+            "./picture/UI4-4.jpg",
+            "./picture/UI4-5.jpg"
+          ],
+          role: "Lead Product & UI/UX Designer",
+          client: "DragonPass Enterprise",
+          deliverables: "B2B SaaS System & Design System",
           timeline: "4 Months",
-          overview: "专注于高密数据的高效可视化呈现。通过极小化视觉噪点与自定义组件微调，为量化交易者与资产管理者提供毫秒级的流畅交互与精准风险控制掌控。"
+          overview: "DRAGONPASS SCRM云平台针对B端多门店运营、私域流量池沉淀与智能客户分析。通过B端产品C端化的设计思考，以极简交互降低用户学习成本，实现全链路营销与精细化客户洞察。"
         },
         "project-card-3": {
-          title: "Cybernetic Audio DAW Platform",
-          subtitle: "高阶沉浸式数字音频工作站系统与音乐制作界面",
-          tag: "CREATIVE TOOLS",
+          title: "DragonPass 龙腾出行 Pro 改版 9.0",
+          subtitle: "高端出行服务与机场高铁贵宾体验重构",
+          tag: "APP REDESIGN / MOBILE UI",
           year: "2025",
-          cover: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
-          gallery1: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
-          gallery2: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&q=80&w=1200",
-          role: "UI & Sound Designer",
-          client: "SynthWave Labs",
-          deliverables: "Desktop DAW Suite",
+          cover: "",
+          images: [
+            "./picture/UI2-1.jpg",
+            "./picture/UI2-2.jpg",
+            "./picture/UI2-3.jpg",
+            "./picture/UI2-4.jpg"
+          ],
+          role: "Lead Mobile UI/UX Designer",
+          client: "DragonPass 龙腾出行",
+          deliverables: "Mobile App 9.0 & UI-Kit",
           timeline: "5 Months",
-          overview: "针对专业音乐制作人打破传统繁琐的下拉菜单限制。采用节点式音轨混音器与硬件感满满的拟物数字旋钮，打造灵感不中断的创作环境。"
+          overview: "龙腾出行 Pro 9.0 全面重塑出行服务全链路体验。从框架层精简操作层级、突出核心功能入口，到表现层升级现代化视觉美学，并沉淀标准化 UI-Kit 组件库，打造便捷、品质、舒适的高端出行平台。"
         },
         "project-card-4": {
-          title: "Autonomous Mobility App Interface",
-          subtitle: "未来智能出行与自动驾驶座舱多屏交互系统",
-          tag: "AUTOMOTIVE UI",
-          year: "2024",
-          cover: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
-          gallery1: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
-          gallery2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-          role: "Senior Interaction Designer",
-          client: "HyperDrive AI",
-          deliverables: "Cockpit HMI & App",
-          timeline: "6 Months",
-          overview: "结合 LiDAR 实时环境重构与增强现实 HUD 显示，将道路感知、乘客娱乐与安全驾驶辅助无缝融为一体的智慧驾舱 UI 体系。"
+          title: "互联网品牌数据监测大屏",
+          subtitle: "全球声量与互动量实时态势感知可视化系统",
+          tag: "DATA VISUALIZATION / BIG SCREEN",
+          year: "2025",
+          cover: "",
+          images: [
+            "./picture/daping.jpg"
+          ],
+          role: "Senior Visual & Data Designer",
+          client: "Shanghai Integrated Platform",
+          deliverables: "Big Screen HMI & Dashboard",
+          timeline: "2 Months",
+          overview: "互联网品牌数据监测大屏整合多维度品牌声量、互动量与情感分析模型。运用地理测绘三维态势感知与高对比科技暗调图表，打造兼具震撼视觉与决策洞察力的专业指挥级数字大屏。"
         }
       };
 
-      // Open Modal Function
+      // Open Modal Function (Behance-Style Pure Case Study Viewer)
       function openProjectModal(cardId) {
         const data = projectDetailsData[cardId] || {
           title: "Creative Project Case",
-          subtitle: "视觉概念、品牌实验与多维图形设计案例探索",
-          tag: "DESIGN EXPLORATION",
-          year: "2026",
-          cover: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200",
-          gallery1: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200",
-          gallery2: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=1200",
-          role: "Creative Director",
-          client: "Personal Project",
-          deliverables: "Visual System & 3D",
-          timeline: "2 Weeks",
-          overview: "探索品牌图形系统在三维渲染与数字介质上的动态演变逻辑，展现多维空间中的艺术表达与细节研磨。"
+          images: []
         };
 
-        document.getElementById("modal-title").innerText = data.title;
-        document.getElementById("modal-subtitle").innerText = data.subtitle;
-        document.getElementById("modal-tag").innerText = data.tag;
-        document.getElementById("modal-year").innerText = data.year;
+        const titleEl = document.getElementById("modal-title");
+        if (titleEl) titleEl.innerText = data.title || "Project Case";
 
-        const imgEl = document.getElementById("modal-cover-img");
+        const videoContainer = document.getElementById("modal-video-container");
         const videoEl = document.getElementById("modal-cover-video");
-        const metaGrid = document.getElementById("modal-meta-grid");
-        const overviewSec = document.getElementById("modal-overview-section");
         const videoDescSec = document.getElementById("modal-video-desc-section");
-        const showcaseSec = document.getElementById("modal-showcase-section");
-        const scrollContainer = document.getElementById("modal-scroll-container");
+        const videoDescText = document.getElementById("modal-video-desc-text");
+        const imagesContainer = document.getElementById("modal-images-container");
+        const placeholderEl = document.getElementById("modal-placeholder-card");
 
         if (data.videoSrc) {
-          // Video Mode - enlarge player and strip away red-boxed items from Screenshot 2
-          if (imgEl) imgEl.classList.add("hidden");
+          // Video Case Study Mode
+          if (videoContainer) videoContainer.classList.remove("hidden");
           if (videoEl) {
-            videoEl.classList.remove("hidden");
             videoEl.src = data.videoSrc;
             videoEl.load();
             videoEl.play().catch(e => console.log("Video auto play prevented", e));
           }
-          if (metaGrid) metaGrid.classList.add("hidden");
-          if (overviewSec) overviewSec.classList.add("hidden");
-          if (showcaseSec) showcaseSec.classList.add("hidden");
-          
           if (videoDescSec) {
             videoDescSec.classList.remove("hidden");
-            const descTextEl = document.getElementById("modal-video-desc-text");
-            if (descTextEl) descTextEl.innerText = data.videoDesc || "";
+            if (videoDescText) videoDescText.innerText = data.videoDesc || "";
           }
-
-          if (scrollContainer) {
-            scrollContainer.classList.remove("max-w-[1000px]");
-            scrollContainer.classList.add("max-w-[1200px]"); // Enlarge modal & video player container width!
-          }
+          if (imagesContainer) imagesContainer.classList.add("hidden");
+          if (placeholderEl) placeholderEl.classList.add("hidden");
         } else {
-          // Standard Image Mode
-          if (imgEl) {
-            imgEl.classList.remove("hidden");
-            imgEl.src = data.cover;
-          }
+          // Standard Image Case Study Mode (Behance Wide Stream)
+          if (videoContainer) videoContainer.classList.add("hidden");
+          if (videoDescSec) videoDescSec.classList.add("hidden");
           if (videoEl) {
-            videoEl.classList.add("hidden");
+            videoEl.pause();
             videoEl.src = "";
           }
-          if (metaGrid) metaGrid.classList.remove("hidden");
-          if (overviewSec) overviewSec.classList.remove("hidden");
-          if (showcaseSec) showcaseSec.classList.remove("hidden");
-          if (videoDescSec) videoDescSec.classList.add("hidden");
 
-          if (scrollContainer) {
-            scrollContainer.classList.remove("max-w-[1200px]");
-            scrollContainer.classList.add("max-w-[1000px]");
+          const imageList = (data.images && data.images.length > 0) 
+            ? data.images 
+            : (data.cover ? [data.cover] : []);
+
+          if (imageList.length > 0) {
+            if (imagesContainer) {
+              imagesContainer.innerHTML = imageList.map((src, idx) => `
+                <img src="${src}" alt="${data.title} - 0${idx + 1}" class="w-full block select-none border-0 p-0 m-0 leading-none" loading="lazy" style="display: block; width: 100%; height: auto; margin: 0; padding: 0; border: none; vertical-align: bottom;" />
+              `).join("");
+              imagesContainer.classList.remove("hidden");
+            }
+            if (placeholderEl) placeholderEl.classList.add("hidden");
+          } else {
+            if (imagesContainer) {
+              imagesContainer.innerHTML = "";
+              imagesContainer.classList.add("hidden");
+            }
+            if (placeholderEl) placeholderEl.classList.remove("hidden");
           }
         }
 
-        const g1 = document.getElementById("modal-gallery-1");
-        if (g1) g1.src = data.gallery1 || "";
-        const g2 = document.getElementById("modal-gallery-2");
-        if (g2) g2.src = data.gallery2 || "";
-        
-        document.getElementById("modal-meta-role").innerText = data.role || "";
-        document.getElementById("modal-meta-client").innerText = data.client || "";
-        document.getElementById("modal-meta-deliverables").innerText = data.deliverables || "";
-        document.getElementById("modal-meta-timeline").innerText = data.timeline || "";
-        document.getElementById("modal-overview-text").innerText = data.overview || "";
+        // Option C: Populate Prev / Next Project Navigation Cards
+        const projectSequence = [
+          "project-card-1",
+          "project-card-2",
+          "project-card-3",
+          "project-card-4"
+        ];
+        const currentIdx = projectSequence.indexOf(cardId);
+        const navContainer = document.getElementById("modal-project-nav");
+        if (currentIdx !== -1 && navContainer) {
+          navContainer.classList.remove("hidden");
+          const prevIdx = (currentIdx - 1 + projectSequence.length) % projectSequence.length;
+          const nextIdx = (currentIdx + 1) % projectSequence.length;
+          const prevKey = projectSequence[prevIdx];
+          const nextKey = projectSequence[nextIdx];
+          const prevData = projectDetailsData[prevKey];
+          const nextData = projectDetailsData[nextKey];
 
+          const prevTitleEl = document.getElementById("modal-nav-prev-title");
+          const prevTagEl = document.getElementById("modal-nav-prev-tag");
+          const nextTitleEl = document.getElementById("modal-nav-next-title");
+          const nextTagEl = document.getElementById("modal-nav-next-tag");
+          const prevBtn = document.getElementById("modal-nav-prev");
+          const nextBtn = document.getElementById("modal-nav-next");
+
+          if (prevTitleEl) prevTitleEl.innerText = prevData?.title || "Previous Case";
+          if (prevTagEl) prevTagEl.innerText = prevData?.tag || prevData?.subtitle || "";
+          if (nextTitleEl) nextTitleEl.innerText = nextData?.title || "Next Case";
+          if (nextTagEl) nextTagEl.innerText = nextData?.tag || nextData?.subtitle || "";
+
+          if (prevBtn) {
+            prevBtn.onclick = (e) => {
+              e.stopPropagation();
+              openProjectModal(prevKey);
+            };
+          }
+          if (nextBtn) {
+            nextBtn.onclick = (e) => {
+              e.stopPropagation();
+              openProjectModal(nextKey);
+            };
+          }
+        } else if (navContainer) {
+          navContainer.classList.add("hidden");
+        }
+
+        projectModal.scrollTop = 0;
+        const floatBackBtn = document.getElementById("modal-float-back-top");
+        if (floatBackBtn) {
+          floatBackBtn.classList.add("opacity-0", "pointer-events-none");
+          floatBackBtn.classList.remove("opacity-100", "pointer-events-auto");
+        }
         projectModal.classList.remove("hidden");
-        document.getElementById("modal-close-btn").classList.remove("hidden");
         document.body.style.overflow = "hidden";
         setTimeout(() => {
           projectModal.style.opacity = "1";
@@ -1324,7 +1660,6 @@
       // Close Modal Function
       function closeProjectModal() {
         projectModal.style.opacity = "0";
-        document.getElementById("modal-close-btn").classList.add("hidden");
         document.body.style.overflow = "";
 
         // Stop video playback if active
@@ -1336,13 +1671,20 @@
 
         setTimeout(() => {
           projectModal.classList.add("hidden");
-          const scrollContainer = document.getElementById("modal-scroll-container");
-          if (scrollContainer) {
-            scrollContainer.classList.remove("max-w-[1200px]");
-            scrollContainer.classList.add("max-w-[1000px]");
-          }
         }, 300);
       }
+
+      // Floating Back-to-Top Button Scroll Visibility Controller
+      const modalFloatBackBtn = document.getElementById("modal-float-back-top");
+      projectModal.addEventListener("scroll", () => {
+        if (projectModal.scrollTop > 260) {
+          modalFloatBackBtn?.classList.remove("opacity-0", "pointer-events-none");
+          modalFloatBackBtn?.classList.add("opacity-100", "pointer-events-auto");
+        } else {
+          modalFloatBackBtn?.classList.add("opacity-0", "pointer-events-none");
+          modalFloatBackBtn?.classList.remove("opacity-100", "pointer-events-auto");
+        }
+      });
 
       // Bind click events to all UI Project & Other Design cards
       document.querySelectorAll("#work [id^='project-card-'], #other-design-track > div").forEach((card, index) => {
@@ -1408,6 +1750,104 @@
         const el = document.getElementById(secId);
         if (el) observer.observe(el);
       });
+
+      // 8. Custom Avant-Garde Designer Cursor (Neo-Brutalist 34px Arrow)
+      (function initCustomCursor() {
+        if (window.matchMedia("(pointer: coarse)").matches) return; // Skip on touch screens
+
+        const cursor = document.getElementById("custom-cursor");
+        const arrow = document.getElementById("cursor-arrow");
+        const tag = document.getElementById("cursor-tag");
+        const tagText = document.getElementById("cursor-tag-text");
+        const tagDot = document.getElementById("cursor-tag-dot");
+        if (!cursor || !arrow || !tag) return;
+
+        document.body.classList.add("has-custom-cursor");
+
+        let mouseX = -100, mouseY = -100;
+        let isHoveringCard = false;
+        let isDown = false;
+
+        window.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursor.style.opacity = "1";
+        });
+
+        window.addEventListener("mouseleave", () => {
+          cursor.style.opacity = "0";
+        });
+
+        window.addEventListener("mouseenter", () => {
+          cursor.style.opacity = "1";
+        });
+
+        window.addEventListener("mousedown", () => {
+          isDown = true;
+          arrow.style.transform = isHoveringCard ? "scale(0.95) rotate(-6deg)" : "scale(0.85)";
+        });
+
+        window.addEventListener("mouseup", () => {
+          isDown = false;
+          arrow.style.transform = isHoveringCard ? "scale(1.15) rotate(-5deg)" : "scale(1)";
+        });
+
+        // 60fps zero-lag render loop
+        function renderCursor() {
+          cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+          requestAnimationFrame(renderCursor);
+        }
+        requestAnimationFrame(renderCursor);
+
+        // Bind interactive target hover states
+        function bindCursorHoverTargets() {
+          // 1. Project Cards (UI Project & Other Design) -> Expand Tag "VIEW PROJECT" / "PLAY REEL"
+          const cards = document.querySelectorAll("#work [id^='project-card-'], #other-design-track > div");
+          cards.forEach(card => {
+            card.addEventListener("mouseenter", () => {
+              isHoveringCard = true;
+              arrow.style.transform = "scale(1.15) rotate(-5deg)";
+              if (card.id === "other-design-video-card") {
+                tagText.innerText = "PLAY REEL";
+                tagDot.className = "w-1.5 h-1.5 rounded-full bg-[#60CEFF] shadow-[0_0_6px_#60CEFF]";
+              } else {
+                tagText.innerText = "VIEW PROJECT";
+                tagDot.className = "w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]";
+              }
+              tag.classList.remove("opacity-0", "scale-90", "translate-y-1");
+              tag.classList.add("opacity-100", "scale-100", "translate-y-0");
+            });
+
+            card.addEventListener("mouseleave", () => {
+              isHoveringCard = false;
+              arrow.style.transform = isDown ? "scale(0.85)" : "scale(1)";
+              tag.classList.add("opacity-0", "scale-90", "translate-y-1");
+              tag.classList.remove("opacity-100", "scale-100", "translate-y-0");
+            });
+          });
+
+          // 2. Buttons, Links, Modal triggers -> Subtle magnetic magnification
+          const interactives = document.querySelectorAll("a, button, .contact-card, #modal-close-btn");
+          interactives.forEach(el => {
+            if (el.closest("#work [id^='project-card-']") || el.closest("#other-design-track > div")) return;
+
+            el.addEventListener("mouseenter", () => {
+              if (!isHoveringCard) {
+                arrow.style.transform = "scale(1.2) translate(-2px, -2px)";
+              }
+            });
+
+            el.addEventListener("mouseleave", () => {
+              if (!isHoveringCard) {
+                arrow.style.transform = isDown ? "scale(0.85)" : "scale(1)";
+              }
+            });
+          });
+        }
+
+        // Initialize hover bindings
+        bindCursorHoverTargets();
+      })();
     </script>
 
     <!-- SplashCursor Animation -->
